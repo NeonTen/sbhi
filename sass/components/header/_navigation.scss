@@ -1,0 +1,159 @@
+.main-navigation {
+	display: block;
+	width: 100%;
+	font-family: $font__secondary;
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			display: grid;
+			row-gap: 5px;
+			@include shadow;
+			float: left;
+			background-color: $color__background-body;
+			padding: 12px 0;
+			position: absolute;
+			top: 53px;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+
+				&:hover > ul,
+				&.focus > ul {
+					display: block;
+					left: 100%;
+    				top: -12px;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			&::before {
+				content: '';
+				width: 100%;
+				height: 25px;
+				position: absolute;
+				top: -25px;
+				left: 0;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		padding: 0 10px;
+		position: relative;
+
+		&:hover > a,
+		&.focus > a {
+			border-color: $color__primary;
+		}
+	}
+
+	a {
+		display: block;
+		text-transform: uppercase;
+		color: $color__text-main;
+		font: {
+			size: 18px;
+			weight: 700;
+		}
+		border-bottom: 3px solid transparent;
+		padding: 4px 28px;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		border-color: $color__primary;
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (max-width: 960px) {
+	.main-navigation a {
+		font-size: 16px;
+		padding: 0 10px;
+	}
+}
+
+@media screen and (min-width: 860px) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+		justify-content: center;
+	}
+}
+@media screen and (max-width: 860px) {
+	.site-header {
+		padding: 20px 0;
+
+		.container {
+			grid-template-columns: minmax(200px, 1fr) 1fr;
+		}
+	}
+	.main-navigation {
+		order: 1;
+		grid-column: 1/-1;
+
+		button.menu-toggle {
+			width: 100%;
+			max-width: 100%;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 20px;
+			font-size: 16px;
+			color: $color__text-main;
+			border-radius: 0;
+			border: 1px solid $color__border-input;
+			background: #fff;
+			margin-top: 10px;
+	
+			svg {
+				width: 24px;
+			}
+		}
+		.nav-menu {
+			border: 1px solid $color__border-input;
+			margin-top: -1px;
+			padding: 10px;
+		}
+		li {
+			margin: 3px 0;
+		}
+	}
+}

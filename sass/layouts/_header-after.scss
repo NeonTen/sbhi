@@ -1,0 +1,35 @@
+.header-after {
+    
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 60px 112px;
+    }
+    .breadcrumbs {
+        display: flex;
+        font: {
+            family: $font__secondary;
+            size: 24px;
+            weight: 700;
+        }
+        margin-bottom: 32px;
+
+        > * {
+            color: $color__text-main;
+        }
+    }
+    .separator {
+        margin: 0 6px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .header-after {
+        padding: 10px 80px;
+
+        .container {
+            grid-template-columns: minmax(300px, 500px) 1fr;
+        }
+    }
+}

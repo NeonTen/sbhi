@@ -1,0 +1,40 @@
+.steps-wrapper {
+    padding: 50px 64px;
+    color: #fff;
+
+    .steps-lists {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 128px;
+        justify-content: center;
+    }
+    .entry-title {
+        margin-bottom: 16px;
+    }
+    .entry-content {
+        margin-bottom: 0;
+        color: inherit;
+    }
+    .icon {
+        margin-bottom: 32px;
+    }
+    .hover {
+        display: none;
+    }
+    .steps-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 0;
+
+        &:hover {
+            .icon {
+                display: none;
+            }
+            .hover {
+                display: initial;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,46 @@
+.audience-wrapper {
+    padding: 50px 0 100px;
+
+    .audience-lists {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	    gap: 20px;
+        justify-content: center;
+    }
+    .hover {
+        display: none;
+    }
+    .audience-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px;
+        border: 1px solid $color__border;
+        border-radius: 12px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: 2px 12px 30px 4px rgba(39, 87, 135, 0.4);
+
+            .icon {
+                display: none;
+            }
+            .hover {
+                display: initial;
+            }
+            .button {
+                color: $color__primary-button;
+		        border-color: $color__primary-button;
+		        background: $color__secondary-button;
+            }
+        }
+    }
+    .entry-title {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .icon,
+    .entry-content {
+        margin-bottom: 32px;
+    }
+}

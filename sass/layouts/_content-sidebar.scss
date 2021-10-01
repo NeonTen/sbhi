@@ -1,0 +1,30 @@
+.site-header {
+	display: grid;
+}
+
+.main-wrapper {
+	width: 100%;
+	margin-top: 100px;
+
+	.container {
+		display: flex;
+		gap: 20px;
+	}
+	.site-main {
+		flex: 3;
+	}
+	.widget-area {
+		flex: 1;
+	}
+}
+
+.site-main,
+.widget-area {
+	width: 100%;
+}
+
+.site-footer {
+	display: grid;
+}
+
+@import "no-sidebar";

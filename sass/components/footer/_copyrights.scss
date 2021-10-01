@@ -1,0 +1,74 @@
+.copyrights {
+    display: grid;
+    align-items: center;
+    min-height: 44px;
+    font: {
+        size: 12px;
+    }
+    background: $color__text-main;
+    color: #fff;
+
+    a {
+        color: #fff;
+        line-height: 1;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .middle-text {
+        ul {
+            margin: 0;
+            list-style: none;
+            display: flex;
+
+            ul {
+                display: none;
+            }
+        }
+        li {
+            padding-right: 16px;
+            position: relative;
+
+            &::after {
+                content: '';
+                width: 1px;
+                height: 12px;
+                background: #fff;
+                position: absolute;
+                top: 3px;
+                right: 8px;
+            }
+
+            &:last-of-type {
+                padding-right: 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+    .fyrefli-brand {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-left: 18px;
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .copyrights {
+        padding: 20px 0;
+
+        .container {
+            flex-direction: column;
+        }
+        .middle-text {
+            padding: 10px 0;
+        }
+    }
+}

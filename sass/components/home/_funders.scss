@@ -1,0 +1,20 @@
+.funders-wrapper {
+    padding: 50px 0;
+
+    .funders-lists {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .funders-wrapper {
+        .funders-lists {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .funders-list {
+            flex: 1 0 33.33%;
+        }
+    }
+}

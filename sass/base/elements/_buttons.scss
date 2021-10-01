@@ -1,0 +1,102 @@
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 250px;
+	height: 50px;
+	background: $color__primary-button;
+	color: #fff;
+	border: 1px solid transparent;
+	border-radius: 100px;
+	font: {
+		family: $font__secondary;
+		size: 18px;
+		weight: 700;
+	}
+	line-height: 1;
+	letter-spacing: 0.04em;
+	padding: 0 30px;
+	text-transform: uppercase;
+	transition: all 0.2s linear;
+
+	&:visited {
+		color: $color__primary-button;
+		background: $color__secondary-button;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__primary-button;
+		border-color: $color__primary-button;
+		background: $color__secondary-button;
+
+		path {
+			fill: $color__primary-button;
+		}
+	}
+
+	&.border-button {
+		color: $color__primary-button;
+		border-color: $color__primary-button;
+		background: $color__secondary-button;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: $color__primary-button;
+			color: #fff;
+			
+			&.dark-bg {
+				border-color: $color__secondary-button;
+			}
+			path {
+				fill: $color__secondary-button;
+			}
+		}
+	}
+	&.shadow {
+		@include shadow;
+	}
+	svg {
+		margin-left: 10px;
+	}
+	&.button-full {
+		max-width: 100%;
+	}
+}
+
+.inline-buttons {
+	display: flex;
+
+	.button {
+		margin-right: 16px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+    .inline-buttons {
+	
+		.button {
+			padding: 0 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 420px) {
+    .inline-buttons {
+		display: block;
+
+		.button {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+}

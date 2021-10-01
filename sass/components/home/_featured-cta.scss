@@ -1,0 +1,39 @@
+.featured-cta {
+    padding: 50px 0;
+    
+    .container {
+        display: flex;
+    }
+    .left-wrap {
+        flex-shrink: 0;
+    }
+    .right-wrap {
+        margin-left: 48px;
+    }
+    .entry-content {
+        max-width: 69%;
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .featured-cta {
+        .left-wrap {
+            flex-shrink: initial;
+        }
+        .entry-content {
+            max-width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 850px) {
+    .featured-cta {
+        .container {
+            display: block;
+        }
+        .right-wrap {
+            margin-left: 0;
+            margin-top: 30px;
+        }
+    }
+}
