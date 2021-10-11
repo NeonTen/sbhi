@@ -83,3 +83,18 @@ big {
 .align-center {
 	align-items: center;
 }
+.box-with-shadow {
+    padding: 24px;
+	box-shadow: 2px 10px 20px -5px rgba(0, 26, 73, 0.25);
+    border-radius: 12px;
+
+	&.box-big {
+		padding: 48px;
+	}
+	&.box-border {
+		border: 1px solid $color__border-input;
+	}
+	&.box-small {
+		padding: 12px;
+	}
+}

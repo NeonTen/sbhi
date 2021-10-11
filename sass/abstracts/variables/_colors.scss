@@ -10,17 +10,18 @@ $color__background-screen: #FBFDFF;
 $color__background-hr: #eee;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__background-input: #FBFBFF;
 
 $color__primary-button: $color__text-main;
 $color__secondary-button: #fff;
 // $color__button-hover: $color__text-main;
 
 $color__text-screen: #21759b;
-$color__text-input: #666;
+$color__text-input: $color__text-secondary;
 $color__text-input-focus: #111;
 $color__link: $color__primary;
 $color__link-hover: #191970; //midnightblue
 
 $color__border: #C4C4C4;
-$color__border-input: #E0E0E0;
+$color__border-input: #98BDFF;
 $color__border-abbr: #666;

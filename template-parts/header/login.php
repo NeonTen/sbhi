@@ -11,10 +11,10 @@ if ( is_user_logged_in() ) {
 
 	$current_profile = wp_get_current_user();
 
-	echo '<div class="login-wrap logged-in flex .align-center">';
+	echo '<div class="login-wrap logged-in flex align-center">';
 
-		echo '<div class="icon pill blue">' . get_svg( 'icons/user', false ); //phpcs:ignore
-		echo '<span class="ml-10">' . $current_profile->display_name . '</span>';
+		echo '<span>' . esc_html( $current_profile->display_name ) . '</span>';
+		echo '<div class="icon blue">' . get_svg( 'icons/user', false ); //phpcs:ignore
 		echo '</div>';
 
 	echo '</div>';

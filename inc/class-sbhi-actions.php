@@ -31,9 +31,9 @@ class SBHI_Actions {
 	 */
 	public function get_page_title_section() {
 
-		// if ( ! is_post_type_archive( 'courses' ) || ! is_page_template( 'page-contact.php' ) ) {
-		// 	return;
-		// }
+		if ( 'courses' !== get_post_type() && ! is_page_template( 'page-contact.php' ) ) {
+			return;
+		}
 
 		?>
 		<section class="header-after">
@@ -67,12 +67,13 @@ class SBHI_Actions {
 
 	/**
 	 * Return pagename.
+	 * Override the pagename (custom pagename).
 	 */
 	public function get_pagename() {
 
 		$pagename = 'all';
 		if ( is_post_type_archive( 'courses' ) ) {
-			$pagename = 'courses';
+			$pagename = 'All Courses';
 		}
 
 		return $pagename;

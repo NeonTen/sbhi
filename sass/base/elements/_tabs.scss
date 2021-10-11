@@ -1,0 +1,80 @@
+.tabs-wrap {
+    border: 1px solid $color__border;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+.tabs {
+    display: flex;
+    padding: 24px;
+    background: $color__border-input;
+    border-radius: 12px;
+	position: relative;
+  
+	.active-tab {
+		background: $color__text-main;
+        color: #fff;
+		position: relative;
+	}
+  
+	li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        flex: 1;
+		background: #fff;
+        border-radius: 12px;
+        padding: 0 20px;
+        margin-right: 2px;
+        font: {
+            family: $font__secondary;
+            size: 18px;
+            weight: 700;
+        }
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+	}
+}
+
+.tabs-content {
+	margin-top: 48px;
+	padding: 24px;
+  
+	li {
+		display: none;
+	}
+    p,
+    .entry-content {
+        margin-bottom: 48px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    .cards-wrap {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+    }
+    .author-card {
+        display: flex;
+        align-items: center;
+    }
+    .author-image {
+        padding-right: 24px;
+    }
+    .author-name {
+        font-size: 18px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+    .text {
+        display: grid;
+        gap: 5px;
+    }
+}

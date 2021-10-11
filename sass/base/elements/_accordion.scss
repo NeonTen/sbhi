@@ -1,0 +1,75 @@
+.accordion {
+
+    .inner {
+        overflow: hidden;
+        display: none;
+
+        .courses-list {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            color: $color__text-secondary;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+    }
+    li {
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+        border-radius: 3px;
+        padding: 24px;
+        margin-bottom: 20px;
+
+        .toggle {
+            width: 100%;
+            display: block;
+            font-size: 24px;
+            padding-left: 25px;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                width: 15px;
+                height: 1px;
+                background: $color__text-secondary;
+                position: absolute;
+                left: 0;
+                top: 15px;
+                transition: all 0.25s linear;
+            }
+            &::after {
+                transform: rotate(90deg);
+            }
+            &.active {
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+    .checkboxes-group {
+
+        input[type='checkbox'] {
+            width: 24px;
+            height: 24px;
+            border-color: rgba(0,0,0,0.15);
+            border-radius: 2px;
+            transform: translateY(-1px);
+
+            &::before {
+                border-width: 0 2px 2px 0;
+                top: 2px;
+                left: 7px;
+                width: 8px;
+                height: 13px;
+            }
+        }
+    }
+}

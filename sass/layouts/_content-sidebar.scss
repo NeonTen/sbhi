@@ -4,17 +4,26 @@
 
 .main-wrapper {
 	width: 100%;
-	margin-top: 100px;
+	margin: 100px 0;
 
 	.container {
 		display: flex;
-		gap: 20px;
 	}
 	.site-main {
 		flex: 3;
+		padding-right: 20px;
 	}
 	.widget-area {
 		flex: 1;
+	}
+	&.single-wrap {
+
+		.site-main {
+			flex: 2.8;
+		}
+		.widget-area {
+			flex: 1.2;
+		}
 	}
 }
 

@@ -16,11 +16,7 @@ body {
         border-radius: 100px;
         
         &.blue {
-            border: 1px solid $color__text-main;
-
-            path {
-                fill: $color__text-main;
-            }
+            background: $color__text-main;
         }
         &.pill {
             width: auto;
@@ -87,6 +83,18 @@ body {
         z-index: 1;
     }
     .login-wrap {
+
+        &.logged-in {
+            > span {
+                font: {
+                    size: 18px;
+                    weight: 600;
+                }
+                text-transform: capitalize;
+                margin-right: 5px;
+                letter-spacing: 0.02em;
+            }
+        }
         &.logged-out {
             display: flex;
         }

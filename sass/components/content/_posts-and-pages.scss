@@ -15,6 +15,11 @@
 }
 .entry-title {
 	font-size: 28px;
+
+	&.single {
+		font-size: 24px;
+		margin-bottom: 14px;
+	}
 }
 .page-title {
 	font: {

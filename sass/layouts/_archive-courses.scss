@@ -1,0 +1,37 @@
+.post-type-archive-courses .courses-wrapper {
+    
+    .container {
+		display: flex;
+		gap: 20px;
+	}
+	.site-main {
+		flex: 3;
+	}
+	.widget-area {
+		flex: 1;
+	}
+    .courses-lists {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+    .post-thumbnail {
+        max-height: 170px;
+    }
+    .button {
+        padding: 0 20px;
+    }
+}
+
+.single-wrap {
+    
+    .widget {
+
+        .widget-title {
+            font-size: 34px;
+            font-weight: 400;
+            color: $color__text-main;
+        }
+        .button {
+            margin-top: 32px;
+        }
+    }
+}

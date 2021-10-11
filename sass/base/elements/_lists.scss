@@ -21,3 +21,15 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
+
+.custom-list {
+	display: grid;
+	gap: 12px;
+	
+	li {
+		background: url('images/icons/square-checked.svg') left center no-repeat;
+		font-size: 18px;
+		padding-left: 29px;
+		color: $color__text-main;
+	}
+}

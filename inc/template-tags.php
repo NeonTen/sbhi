@@ -52,6 +52,19 @@ if ( ! function_exists( 'sbhi_posted_by' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'sbhi_author_avatar' ) ) :
+	/**
+	 * Prints HTML with author image for the current author.
+	 *
+	 * @param string $size size of avatar image.
+	 */
+	function sbhi_author_avatar( $size = '100' ) {
+		if ( function_exists( 'get_avatar' ) ) :
+			echo get_avatar( get_the_author_meta( 'email' ), $size );
+		endif;
+	}
+endif;
+
 if ( ! function_exists( 'sbhi_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
@@ -112,14 +125,31 @@ if ( ! function_exists( 'sbhi_entry_footer' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'sbhi_post_title' ) ) {
+	/**
+	 * Displays an optional post title.
+	 */
+	function sbhi_post_title() {
+
+		if ( is_singular() && ! is_front_page() ) :
+			the_title( '<h1 class="page-title">', '</h1>' );
+		else :
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
+
+	}
+}
+
 if ( ! function_exists( 'sbhi_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
+	 *
+	 * @param string $thumb cuustom thumb size.
 	 */
-	function sbhi_post_thumbnail() {
+	function sbhi_post_thumbnail( $thumb = 'post-thumbnail' ) {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -136,14 +166,14 @@ if ( ! function_exists( 'sbhi_post_thumbnail' ) ) :
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
 					the_post_thumbnail(
-						'post-thumbnail',
-						array(
+						$thumb,
+						[
 							'alt' => the_title_attribute(
-								array(
+								[
 									'echo' => false,
-								)
+								]
 							),
-						)
+						]
 					);
 				?>
 			</a>

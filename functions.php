@@ -147,12 +147,15 @@ function sbhi_scripts() {
 	wp_enqueue_style( 'sbhi-style', get_stylesheet_uri(), [], THEME_VERSION );
 
 	// Google fonts.
-	wp_enqueue_style( 'sbhi-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat&family=Titillium+Web:wght@600;700&display=swap', false );
+	wp_enqueue_style( 'sbhi-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat&family=Titillium+Web:wght@400;600;700&display=swap', false );
 
 	/**
 	 * Scripts
 	 */
 	wp_enqueue_script( 'sbhi-navigation', get_template_directory_uri() . '/js/navigation.js', [], THEME_VERSION, true );
+
+	// Custom scripts.
+	wp_enqueue_script( 'sbhi-custom', get_template_directory_uri() . '/js/custom.js', [ 'jquery' ], THEME_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -184,3 +187,8 @@ require get_template_directory() . '/inc/customizer.php';
  * All custom actions
  */
 require get_template_directory() . '/inc/class-sbhi-actions.php';
+
+/**
+ * Custom posts types
+ */
+require get_template_directory() . '/inc/class-custom-post-types.php';

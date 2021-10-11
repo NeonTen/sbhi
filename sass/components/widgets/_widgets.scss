@@ -1,8 +1,37 @@
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 24px;
 
 	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
+	}
+	.widget-title {
+        font-size: 24px;
+        color: $color__text-secondary;
+		margin-bottom: 28px;
+    }
+	&.search-widget {
+
+		form {
+			position: relative;
+		}
+		input[type='text'] {
+			height: 44px;
+			border-color: #C4C4C4;
+			padding-right: 72px;
+		}
+		button {
+			width: 59px;
+			height: 44px;
+			padding: 0;
+			border-radius: 0 4px 4px 0;
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			svg {
+				margin-left: 0;
+			}
+		}
 	}
 }

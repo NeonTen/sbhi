@@ -61,3 +61,25 @@ function get_svg( $path, $echo = true ) {
 		return $svg;
 	}
 }
+
+/**
+ * Print terms with checkboxes for filters.
+ *
+ * @param string $taxonomy taxonomy name.
+ * @param string $name     input field name.
+ */
+function get_term_filters( $taxonomy, $name ) {
+	?>
+	<div class="filter-custom-taxonomy">
+		<?php
+		$terms = get_terms( $taxonomy );
+		foreach ( $terms as $term ) :
+			?>
+			<div class="checkboxes-group">
+				<input type="checkbox" value="<?php echo esc_attr( $term->slug ); ?>" name="<?php echo $name; ?>[]" class="tax-filter" id="<?php echo esc_attr( $term->slug ); ?>" />
+				<label for="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></label>
+			</div>
+		<?php endforeach; ?>
+	</div>
+	<?php
+}

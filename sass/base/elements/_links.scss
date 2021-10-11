@@ -15,4 +15,13 @@ a {
 	&:active {
 		outline: 0;
 	}
+	&.link {
+		font: {
+			size: 18px;
+			// weight: 400;
+		}
+		text-decoration: underline;
+		color: $color__text-main;
+		letter-spacing: 0.02em;
+	}
 }

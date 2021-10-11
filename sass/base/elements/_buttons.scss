@@ -24,8 +24,7 @@ input[type="submit"] {
 	transition: all 0.2s linear;
 
 	&:visited {
-		color: $color__primary-button;
-		background: $color__secondary-button;
+		color: #fff;
 	}
 	&:hover,
 	&:focus,

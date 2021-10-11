@@ -3,7 +3,7 @@
 
     .courses-lists {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
         gap: 78px 20px;
         justify-content: center;
     }
@@ -13,11 +13,14 @@
         border-radius: 12px;
     }
     .post-thumbnail {
-        max-height: 117px;
+        display: flex;
+        height: 204px;
         overflow: hidden;
 
         img {
             width: 100%;
+            object-fit: cover;
+            object-position: center;
             border-radius: 12px 12px 0 0;
         }
     }
@@ -30,16 +33,12 @@
         align-items: center;
         font-size: 24px;
     }
-    .entry-content {
-        margin-top: 16px;
-        margin-bottom: 12px;
-        color: $color__text-light;
-    }
     .course-features {
         display: grid;
         gap: 8px;
         font-size: 18px;
         color: $color__text-secondary;
+        margin-top: 12px;
 
         li {
             display: flex;
@@ -61,10 +60,11 @@
             flex: 1;
         }
     }
-    .bottom {
+    .course-bottom {
+        grid-column: 1/-1;
         display: grid;
         justify-content: center;
-        margin-top: 56px;
+        margin-top: -22px;
     }
 
 }
