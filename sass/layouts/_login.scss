@@ -1,0 +1,51 @@
+.login-page {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+
+    .login-title {
+        font-size: 60px;
+        color: $color__text-secondary;
+    }
+    .wrapper {
+        display: flex;
+    }
+    .left-wrap,
+    .right-wrap {
+        width: 100%;
+        padding: 24px;
+    }
+    .left-wrap {
+        .login-title {
+            margin-bottom: 90px;
+        }
+        a {
+            color: $color__text-main;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+    .dark-bg {
+        .login-title,
+        p {
+            color: #fff;
+        }
+
+    }
+    strong {
+		font-weight: 700;
+	}
+    .forminator-response-message.forminator-error {
+        display: none;
+    }
+    .forminator-description p {
+        margin-top: 32px;
+    }
+    .forminator-has_error {
+        input,
+        input:focus {
+            border-color: red;
+        }
+    }
+}

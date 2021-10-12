@@ -6,9 +6,6 @@
 	width: 100%;
 	margin: 100px 0;
 
-	.container {
-		display: flex;
-	}
 	.site-main {
 		flex: 3;
 		padding-right: 20px;
@@ -34,6 +31,23 @@
 
 .site-footer {
 	display: grid;
+}
+
+.error404 {
+	.page-content {
+
+		form {
+			position: relative;
+		}
+		input {
+			border-radius: 50px;
+		}
+		button {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
 }
 
 @import "no-sidebar";

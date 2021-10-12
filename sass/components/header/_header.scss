@@ -85,7 +85,10 @@ body {
     .login-wrap {
 
         &.logged-in {
-            > span {
+            a {
+                color: $color__text-main;
+            }
+            span {
                 font: {
                     size: 18px;
                     weight: 600;

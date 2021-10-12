@@ -15,9 +15,9 @@
 get_header();
 ?>
 
-	<div class="main-wrapper flex">
+	<div class="main-wrapper">
 
-		<div class="container">
+		<div class="container flex">
 
 			<main id="primary" class="site-main">
 

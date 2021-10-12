@@ -44,7 +44,26 @@
             line-height: 1;
             margin-bottom: 8px;
         }
+        li {
+            svg {
+                margin-right: 16px;
+            }
+            path {
+                fill: $color__text-main;
+                stroke: $color__text-main;
+            }
+            &.active-tab {
+
+                path {
+                    fill: #fff;
+                    stroke: #fff;
+                }
+            }
+        }
+        
         a {
+            display: flex;
+            align-items: center;
             color: $color__text-main;
             margin-top: 18px;
             padding-top: 32px;
@@ -56,6 +75,10 @@
             }
             letter-spacing: 0.04em;
             text-transform: uppercase;
+
+            svg {
+                margin-right: 16px;
+            }
         }
     }
     .tabs-content {

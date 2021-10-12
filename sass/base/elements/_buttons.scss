@@ -23,6 +23,10 @@ input[type="submit"] {
 	text-transform: uppercase;
 	transition: all 0.2s linear;
 
+	path {
+		fill: #fff;
+	}
+
 	&:visited {
 		color: #fff;
 	}
@@ -42,6 +46,10 @@ input[type="submit"] {
 		color: $color__primary-button;
 		border-color: $color__primary-button;
 		background: $color__secondary-button;
+
+		path {
+			fill: $color__primary-button;
+		}
 
 		&:hover,
 		&:active,
@@ -64,6 +72,7 @@ input[type="submit"] {
 		margin-left: 10px;
 	}
 	&.button-full {
+		width: 100%;
 		max-width: 100%;
 	}
 }

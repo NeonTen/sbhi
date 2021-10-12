@@ -7,6 +7,25 @@
  * @package SBHI
  */
 
+/**
+ * Prints HTML of logo.
+ */
+function theme_logo() {
+	if ( has_custom_logo() ) {
+		the_custom_logo();
+	} else {
+		if ( is_front_page() && is_home() ) :
+			?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php
+		else :
+			?>
+			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php
+		endif;
+	}
+}
+
 if ( ! function_exists( 'sbhi_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

@@ -83,3 +83,25 @@ function get_term_filters( $taxonomy, $name ) {
 	</div>
 	<?php
 }
+
+/**
+ * Custom login redirect.
+ *
+ * @param string $login_url default $login_url.
+ * @param string $redirect default $redirect.
+ * @param string $force_reauth default $force_reauth.
+ */
+function custom_login_page( $login_url, $redirect, $force_reauth ) {
+	if ( is_admin() ) {
+		return $login_url;
+	}
+	$login_url = site_url( '/login/', 'login' );
+	if ( ! empty( $redirect ) ) {
+		$login_url = add_query_arg( 'redirect_to', rawurlencode( $redirect ), $login_url );
+	}
+	if ( $force_reauth ) {
+		$login_url = add_query_arg( 'reauth', '1', $login_url );
+	}
+	return $login_url;
+}
+add_filter( 'login_url', 'custom_login_page', 10, 3 );

@@ -12,10 +12,10 @@
 	<div class="container dashboard-container">
 
 		<ul class="tabs">
-			<li class="active-tab">Dashboard</li>
-			<li>My Profile</li>
-			<li>Certificates</li>
-			<a href="<?php echo esc_url( wp_logout_url() ); ?>">Logout</a>
+			<li class="active-tab"><?php get_svg( 'icons/dashboard' ); ?>Dashboard</li>
+			<li><?php get_svg( 'icons/user-round' ); ?>My Profile</li>
+			<li><?php get_svg( 'icons/file' ); ?>Certificates</li>
+			<a href="<?php echo esc_url( wp_logout_url() ); ?>"><?php get_svg( 'icons/logout' ); ?>Logout</a>
 		</ul>
 
 		<ul class="tabs-content">

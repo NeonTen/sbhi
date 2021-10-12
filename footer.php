@@ -12,7 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<?php // footer_widget_columns(); ?>
+		<?php get_template_part( 'template-parts/footer/widgets' ); ?>
 
 		<div class="copyrights">
 			<div class="container">
