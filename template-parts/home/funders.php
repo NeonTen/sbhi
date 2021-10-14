@@ -11,27 +11,50 @@
 
 	<div class="container small-container">
 
-		<h2 class="page-title text-center">Funders</h2>
+		<?php
+		if ( get_field( 'funders_section_title', 'option' ) ) {
+			echo '<h2 class="page-title text-center">' . get_field( 'funders_section_title', 'option' ) . '</h2>'; // phpcs:ignore
+		}
 
-		<ul class="funders-lists">
+		// Check Funders lists exists.
+		if ( have_rows( 'funders_lists', 'option' ) ) :
 
-			<li class="funders-list">
-				<a href="#">
-					<img src="<?php echo get_template_directory_uri() . '/images/brand-1.png'; // phpcs:ignore ?>" alt="">
-				</a>
-			</li>
-			<li class="funders-list">
-				<a href="#">
-					<img src="<?php echo get_template_directory_uri() . '/images/brand-2.png'; // phpcs:ignore ?>" alt="">
-				</a>
-			</li>
-			<li class="funders-list">
-				<a href="#">
-					<img src="<?php echo get_template_directory_uri() . '/images/brand-3.png'; // phpcs:ignore ?>" alt="">
-				</a>
-			</li>
+			echo '<ul class="funders-lists">';
 
-		</ul>
+			// Loop through rows.
+			while ( have_rows( 'funders_lists', 'option' ) ) :
+				the_row();
+
+				// Load sub field value.
+				$image = get_sub_field( 'funder_image', 'option' );
+				$url   = get_sub_field( 'funder_link', 'option' );
+
+				if ( $url && $image ) {
+					printf(
+						'<li class="funder-list">
+							<a href="%s">
+								<img src="%s" alt="">
+							</a>
+						</li>',
+						esc_url( $url ),
+						esc_url( $image )
+					);
+				}
+				if ( ! $url && $image ) {
+					printf(
+						'<li class="funder-list">
+							<img src="%s" alt="">
+						</li>',
+						esc_url( $image )
+					);
+				}
+
+			endwhile;
+
+			echo '</ul>';
+
+		endif;
+		?>
 
 	</div>
 

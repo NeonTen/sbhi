@@ -12,7 +12,7 @@ get_header();
 
 	<div class="main-wrapper single-wrap">
 
-		<div class="container">
+		<div class="container flex">
 
 			<main id="primary" class="site-main">
 

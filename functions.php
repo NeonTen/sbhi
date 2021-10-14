@@ -191,4 +191,9 @@ require get_template_directory() . '/inc/class-sbhi-actions.php';
 /**
  * Custom posts types
  */
-require get_template_directory() . '/inc/class-custom-post-types.php';
+// require get_template_directory() . '/inc/class-custom-post-types.php';
+
+/**
+ * Load ACF Options panel.
+ */
+require get_template_directory() . '/inc/class-acf-options-panel.php';

@@ -11,35 +11,42 @@
 
 	<div class="container">
 
-		<h2 class="page-title text-center">Testimonials</h2>
+		<?php
+		if ( get_field( 'testimonials_section_title', 'option' ) ) {
+			echo '<h2 class="page-title text-center">' . get_field( 'testimonials_section_title', 'option' ) . '</h2>'; // phpcs:ignore
+		}
 
-		<ul class="testimonials-lists">
+		// Check Testimonials lists exists.
+		if ( have_rows( 'testimonials_lists', 'option' ) ) :
 
-			<li class="testimonials-list">
-				<div class="testimonial-image">
-					<img src="<?php echo get_template_directory_uri() . '/images/testimonial-1.png'; // phpcs:ignore ?>" alt="">
-				</div>
-				<p class="testimonial-content">“Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor”</p>
-				<p class="author-name text-center">Someone Else</p>
-			</li>
+			echo '<ul class="testimonials-lists">';
 
-			<li class="testimonials-list">
-				<div class="author-image">
-					<img src="<?php echo get_template_directory_uri() . '/images/testimonial-2.png'; // phpcs:ignore ?>" alt="">
-				</div>
-				<p class="testimonial-content">“Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor”</p>
-				<p class="author-name text-center">Someone Else</p>
-			</li>
+			// Loop through rows.
+			while ( have_rows( 'testimonials_lists', 'option' ) ) :
+				the_row();
 
-			<li class="testimonials-list">
-				<div class="author-image">
-					<img src="<?php echo get_template_directory_uri() . '/images/testimonial-3.png'; // phpcs:ignore ?>" alt="">
-				</div>
-				<p class="testimonial-content">“Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor”</p>
-				<p class="author-name text-center">Someone Else</p>
-			</li>
+				// Load sub field value.
+				$image   = get_sub_field( 'testimonial_image', 'option' );
+				$content = get_sub_field( 'testimonial_content', 'option' );
+				$author  = get_sub_field( 'testimonial_author', 'option' );
 
-		</ul>
+				printf(
+					'<li class="testimonials-list">
+						<div class="testimonial-image"><img src="%1$s" alt=""></div>
+						<p class="testimonial-content">%2$s</p>
+						<p class="author-name text-center">%3$s</p>
+					</li>',
+					esc_url( $image ),
+					esc_html( $content ),
+					esc_html( $author )
+				);
+
+			endwhile;
+
+			echo '</ul>';
+
+		endif;
+		?>
 
 	</div>
 

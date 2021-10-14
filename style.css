@@ -1221,6 +1221,7 @@ textarea {
 }
 
 .contact-page address .wrap {
+	width: 100%;
 	display: flex;
 	border-bottom: 1px solid #fff;
 	padding-bottom: 32px;
@@ -1229,6 +1230,14 @@ textarea {
 .contact-page address .wrap:last-of-type {
 	border-bottom: none;
 	padding-bottom: 0;
+}
+
+.contact-page address .wrap a {
+	color: #fff;
+}
+
+.contact-page address .wrap a:hover {
+	text-decoration: underline;
 }
 
 .contact-page address p {
@@ -1322,6 +1331,10 @@ body {
 	font-family: "Titillium Web", sans-serif;
 	font-size: 24px;
 	font-weight: 700;
+}
+
+.top-bar .icon {
+	cursor: pointer;
 }
 
 .top-bar .right-wrap .button {
@@ -1607,9 +1620,34 @@ body {
 	letter-spacing: 0.04em;
 }
 
+.f-widget .f-links a:hover {
+	color: #F08300;
+}
+
 .f-widget .button {
 	margin-top: 48px;
 	max-width: 165px;
+}
+
+.f-widget .social-icons {
+	display: flex;
+	margin-top: 48px;
+}
+
+.f-widget .social-icons li {
+	margin-right: 4px;
+}
+
+.f-widget .social-icons li:last-of-type {
+	margin-right: 0;
+}
+
+.f-widget .social-icons li path {
+	transition: all 0.2s linear;
+}
+
+.f-widget .social-icons li:hover path {
+	fill: #F08300;
 }
 
 @media screen and (min-width: 1440px) {

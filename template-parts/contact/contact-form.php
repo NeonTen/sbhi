@@ -10,6 +10,9 @@
 <div class="left-wrap">
 	<?php
 	theme_logo();
-	echo do_shortcode( '[forminator_form id="22"]' );
+
+	if ( get_field( 'contact_form_shortcode', 'option' ) ) {
+		echo do_shortcode( get_field( 'contact_form_shortcode', 'option' ) );
+	}
 	?>
 </div>

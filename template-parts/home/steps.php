@@ -9,29 +9,40 @@
 
 <section class="steps-wrapper dark">
 
-	<ul class="steps-lists">
+	<?php
+	// Check Steps lists exists.
+	if ( have_rows( 'steps_lists', 'option' ) ) :
 
-		<li class="steps-list">
-			<div class="icon"><?php get_svg( 'icons/steps/1' ); ?></div>
-			<div class="icon hover"><?php get_svg( 'icons/steps/1-hover' ); ?></div>
-			<h2 class="entry-title">Register</h2>
-			<p class="entry-content text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna</p>
-		</li>
+		echo '<ul class="steps-lists">';
 
-		<li class="steps-list">
-			<div class="icon"><?php get_svg( 'icons/steps/2' ); ?></div>
-			<div class="icon hover"><?php get_svg( 'icons/steps/2-hover' ); ?></div>
-			<h2 class="entry-title">Complete Course</h2>
-			<p class="entry-content text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna</p>
-		</li>
+		// Loop through rows.
+		while ( have_rows( 'steps_lists', 'option' ) ) :
+			the_row();
 
-		<li class="steps-list">
-			<div class="icon"><?php get_svg( 'icons/steps/3' ); ?></div>
-			<div class="icon hover"><?php get_svg( 'icons/steps/3-hover' ); ?></div>
-			<h2 class="entry-title">Get Certificate</h2>
-			<p class="entry-content text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna</p>
-		</li>
+			// Load sub field value.
+			$icon       = get_sub_field( 'steps_icon', 'option' );
+			$hover_icon = get_sub_field( 'steps_hover_icon', 'option' );
+			$title      = get_sub_field( 'steps_title', 'option' );
+			$text       = get_sub_field( 'steps_content', 'option' );
 
-	</ul>
+			printf(
+				'<li class="steps-list">
+					<div class="icon">%1$s</div>
+					<div class="icon hover">%2$s</div>
+					<h2 class="entry-title">%3$s</h2>
+					<p class="entry-content text-center">%4$s</p>
+				</li>',
+				file_get_contents( $icon ), // phpcs:ignore
+				file_get_contents( $hover_icon ), // phpcs:ignore
+				esc_html( $title ),
+				esc_html( $text )
+			);
+
+		endwhile;
+
+		echo '</ul>';
+
+	endif;
+	?>
 
 </section>

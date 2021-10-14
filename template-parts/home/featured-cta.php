@@ -5,19 +5,39 @@
  * @package SBHI
  */
 
+$button_url = get_field( 'featured_button_link', 'option' );
 ?>
 
 <section class="featured-cta">
 	<div class="container">
 
-	<div class="left-wrap">
-		<img src="<?php echo get_template_directory_uri() . '/images/featured.png'; // phpcs:ignore ?>" alt="">
-	</div>
+	<?php
+	if ( get_field( 'featured_image', 'option' ) ) {
+		echo '<div class="left-wrap">';
+		echo '<img src="' . get_field( 'featured_image', 'option' ) . '">'; // phpcs:ignore
+		echo '</div>';
+	}
+	?>
 
 	<div class="right-wrap">
-		<h2 class="big-title">Desktop Large Header</h2>
-		<p class="entry-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel</p>
-		<a href="#" class="button shadow">See our Courses</a>
+
+		<?php
+		if ( get_field( 'featured_title', 'option' ) ) {
+			echo '<h2 class="big-title">' . get_field( 'featured_title', 'option' ) . '</h2>'; // phpcs:ignore
+		}
+
+		if ( get_field( 'featured_content', 'option' ) ) {
+			echo '<p class="entry-content">' . get_field( 'featured_content', 'option' ) . '</p>'; // phpcs:ignore
+		}
+
+		if ( $button_url ) {
+			printf(
+				'<a href="%s" class="button shadow">%s</a>',
+				esc_html( $button_url ),
+				esc_html__( 'See our Courses', 'sbhi' )
+			);
+		}
+		?>
 	</div>
 
 	</div>

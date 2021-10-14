@@ -39,9 +39,11 @@ class SBHI_Actions {
 		<section class="header-after">
 			<div class="container">
 
-				<div class="left-wrap">
-					<img src="<?php echo get_template_directory_uri() . '/images/page-featured.png'; // phpcs:ignore ?>" alt="">
-				</div>
+				<?php
+				if ( get_field( 'breadcrumb_image', 'option' ) ) {
+					echo '<div class="left-wrap"><img src="' . get_field( 'breadcrumb_image', 'option' ) . '"></div>'; // phpcs:ignore
+				}
+				?>
 				<div class="right-wrap">
 					<?php $this->get_breadcrumbs(); ?>
 					<?php $this->get_page_title(); ?>

@@ -7,7 +7,6 @@
     .container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        // grid-template-columns: minmax(170px, 176px) minmax(250px, 363px) minmax(162px, 1fr) minmax(240px, 1fr) minmax(162px, 1fr);
         gap: 48px;
     }
 }
@@ -34,11 +33,35 @@
             }
             text-transform: uppercase;
             letter-spacing: 0.04em;
+
+            &:hover {
+                color: $color__primary;
+            }
         }
     }
     .button {
         margin-top: 48px;
         max-width: 165px;
+    }
+    .social-icons {
+        display: flex;
+        margin-top: 48px;
+
+        li {
+            margin-right: 4px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+            path {
+                transition: all 0.2s linear;
+            }
+            &:hover {
+                path {
+                    fill: $color__primary;
+                }
+            }
+        }
     }
 }
 

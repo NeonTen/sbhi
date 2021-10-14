@@ -8,8 +8,27 @@
 ?>
 
 <div class="middle-text">
-	<ul>
-		<li>Spina Bifida Hydrocephalus Ireland (SBHI)</li>
-		<li>Reg. Charity No. 20009366</li>
-	</ul>
+	<?php
+	// Check Steps lists exists.
+	if ( have_rows( 'copyrights_middle_text', 'option' ) ) :
+
+		echo '<ul>';
+
+		// Loop through rows.
+		while ( have_rows( 'copyrights_middle_text', 'option' ) ) :
+			the_row();
+
+			if ( get_sub_field( 'middle_text', 'option' ) ) {
+				printf(
+					'<li>%s</li>',
+					esc_html( get_sub_field( 'middle_text', 'option' ) )
+				);
+			}
+
+		endwhile;
+
+		echo '</ul>';
+
+	endif;
+	?>
 </div><!-- .middle-text -->

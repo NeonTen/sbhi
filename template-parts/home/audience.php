@@ -11,35 +11,48 @@
 
 	<div class="container">
 
-		<h2 class="page-title text-center">Audience</h2>
+		<?php
+		if ( get_field( 'customers_main_title', 'option' ) ) {
+			echo '<h2 class="page-title text-center">' . get_field( 'customers_main_title', 'option' ) . '</h2>'; // phpcs:ignore
+		}
 
-		<ul class="audience-lists">
+		// Check Audience lists exists.
+		if ( have_rows( 'audience_lists', 'option' ) ) :
 
-			<li class="audience-list">
-				<div class="icon"><?php get_svg( 'icons/audience/1' ); ?></div>
-				<div class="icon hover"><?php get_svg( 'icons/audience/1-hover' ); ?></div>
-				<h2 class="entry-title">SBHI Staff</h2>
-				<p class="entry-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna</p>
-				<a href="#" class="button shadow">See Courses</a>
-			</li>
+			echo '<ul class="audience-lists">';
 
-			<li class="audience-list">
-				<div class="icon"><?php get_svg( 'icons/audience/2' ); ?></div>
-				<div class="icon hover"><?php get_svg( 'icons/audience/2-hover' ); ?></div>
-				<h2 class="entry-title">SBHI Service Users</h2>
-				<p class="entry-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna</p>
-				<a href="#" class="button shadow">See Courses</a>
-			</li>
+			// Loop through rows.
+			while ( have_rows( 'audience_lists', 'option' ) ) :
+				the_row();
 
-			<li class="audience-list">
-				<div class="icon"><?php get_svg( 'icons/audience/3' ); ?></div>
-				<div class="icon hover"><?php get_svg( 'icons/audience/3-hover' ); ?></div>
-				<h2 class="entry-title">External Organisations</h2>
-				<p class="entry-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna</p>
-				<a href="#" class="button shadow">See Courses</a>
-			</li>
+				// Load sub field value.
+				$icon       = get_sub_field( 'audience_icon', 'option' );
+				$hover_icon = get_sub_field( 'audience_hover_icon', 'option' );
+				$title      = get_sub_field( 'audience_title', 'option' );
+				$text       = get_sub_field( 'audience_text', 'option' );
 
-		</ul>
+				printf(
+					'<li class="audience-list">
+						<div class="icon">%1$s</div>
+						<div class="icon hover">%2$s</div>
+						<h2 class="entry-title">%3$s</h2>
+						<p class="entry-content">%4$s</p>
+						<a href="/courses" class="button shadow">%5$s</a>
+					</li>',
+					file_get_contents( $icon ), // phpcs:ignore
+					file_get_contents( $hover_icon ), // phpcs:ignore
+					esc_html( $title ),
+					esc_html( $text ),
+					esc_html__( 'See Courses', 'sbhi' )
+				);
+
+			endwhile;
+
+			echo '</ul>';
+
+		endif;
+
+		?>
 
 	</div>
 

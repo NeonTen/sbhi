@@ -5,6 +5,7 @@
  * @package SBHI
  */
 
+$donate_url = get_field( 'donate_button_link', 'option' );
 ?>
 
 <div class="top-bar">
@@ -12,20 +13,36 @@
 	<div class="container">
 
 		<div class="left-wrap">
-			<a href="#"><?php esc_html_e( 'Email SBHI', 'sbhi' ); ?></a>
-			<span><?php esc_html_e( '+353 (0)1 457 2329', 'sbhi' ); ?></span>
+			<?php
+			if ( get_field( 'header_email', 'option' ) ) {
+				printf(
+					'<a href="%1$s">%1$s</a>',
+					get_field( 'header_email', 'option' ) // phpcs:ignore
+				);
+			}
+
+			if ( get_field( 'header_number', 'option' ) ) {
+				echo '<span>' . get_field( 'header_number', 'option' ) . '</span>'; // phpcs:ignore
+			}
+			?>
 		</div>
 
 		<div class="right-wrap">
-			<div class="icon">
+			<div id="accessibilityWidget" class="icon">
 				<?php get_svg( 'icons/access' ); ?>
 			</div>
-			<a href="#" class="button border-button dark-bg">
-				<?php
-				esc_html_e( 'Donate', 'sbhi' );
-				get_svg( 'icons/hand-heart' );
+			<?php
+			if ( $donate_url ) {
 				?>
-			</a>
+				<a href="<?php echo esc_url( $donate_url ); ?>" class="button border-button dark-bg">
+					<?php
+					esc_html_e( 'Donate', 'sbhi' );
+					get_svg( 'icons/hand-heart' );
+					?>
+				</a>
+				<?php
+			}
+			?>
 		</div>
 
 	</div>
