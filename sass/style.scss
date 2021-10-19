@@ -41,6 +41,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Media
 	- Captions
 	- Galleries
+# Plugins
+	- Tutor
 # Utilities
 	- Accessibility
 	- Alignments
@@ -69,7 +71,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "layouts/content-sidebar";
 @import "layouts/header-after";
 @import "layouts/archive-courses";
-@import "layouts/dashboard";
 @import "layouts/login";
 @import "layouts/contact";
 
@@ -77,6 +78,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Components
 --------------------------------------------------------------*/
 @import "components/components";
+
+/*--------------------------------------------------------------
+# Pluugin
+--------------------------------------------------------------*/
+@import "plugins/tutor/tutor";
 
 /*--------------------------------------------------------------
 # Utilities

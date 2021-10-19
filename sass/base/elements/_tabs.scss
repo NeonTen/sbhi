@@ -1,16 +1,19 @@
-.tabs-wrap {
+.tabs-wrap,
+.course-enrolled-nav {
     border: 1px solid $color__border;
     border-radius: 12px;
     margin-top: 40px;
 }
-.tabs {
+.tabs,
+.course-enrolled-nav ul {
     display: flex;
     padding: 24px;
     background: $color__border-input;
     border-radius: 12px;
 	position: relative;
   
-	.active-tab {
+	.active-tab,
+    .active {
 		background: $color__text-main;
         color: #fff;
 		position: relative;

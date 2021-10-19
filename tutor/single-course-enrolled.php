@@ -22,9 +22,9 @@ do_action('tutor_course/single/enrolled/before/wrap');
             <div class="tutor-col-8 tutor-col-md-100">
                 <?php do_action('tutor_course/single/enrolled/before/inner-wrap'); ?>
                 <?php // tutor_course_enrolled_lead_info(); ?>
+                <?php tutor_course_enrolled_nav(); ?>
                 <?php tutor_course_content(); ?>
                 <?php tutor_course_benefits_html(); ?>
-                <?php tutor_course_enrolled_nav(); ?>
                 <?php tutor_course_instructors_html(); ?>
                 <?php tutor_course_target_reviews_html(); ?>
                 <?php tutor_course_target_review_form_html(); ?>

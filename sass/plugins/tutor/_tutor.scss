@@ -1,0 +1,303 @@
+// Dashboard
+
+.tutor-dashboard {
+    max-width: 1200px;
+    margin: 100px auto;
+
+    .tutor-dashboard-left-menu {
+
+        .tutor-dashboard-permalinks {
+            border-right: none;
+
+            li {
+                font: {
+                    family: $font__secondary;
+                    size: 18px;
+                    weight: 700;
+                }
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+
+                &.tutor-dashboard-menu-divider-header {
+                    color: $color__primary;
+                }
+                a {
+                    padding: 14px 12px;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 4px;
+
+                    &:hover {
+                        background: none;
+                    }
+
+                }
+                &.active {
+                    a:hover {
+                        background: $color__text-main;
+                    }
+                }
+            }
+            a::before {
+                margin-right: 16px;
+                font-size: 22px;
+                --tutor-primary-hover-color: $color__text-main;
+                opacity: 1;
+            }
+        }
+    }
+    .author-name {
+        font-size: 48px;
+    }
+    .tutor-dashboard-header-button {
+        .button {
+            max-width: 100%;
+        }
+    }
+    .tutor-dashboard-content {
+        h3 {
+            font-size: 34px;
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+        .tutor-dashboard-info-cards {
+            margin-bottom: 36px;
+        }
+        .tutor-dashboard-info-card p {
+            background: #fff!important;
+            border: 1px solid $color__border;
+            color: $color__text-main!important;
+            text-align: center;
+        }
+        .tutor-dashboard-content-inner .tutor-mycourse-wrap {
+            @extend .box-with-shadow;
+            @extend .box-with-shadow.box-border;
+        }
+    }
+    .tutor-mycourse-content {
+        h3 a {
+            font: {
+                size: 24px;
+                weight: 700;
+            }
+            color: $color__text-secondary;
+        }
+    }
+}
+.tutor-dashboard-info-table-wrap {
+    > h3 {
+        border: none;
+        padding: 0;
+    }
+    .tutor-dashboard-info-table a {
+        color: $color__text-main;
+    }
+}
+
+// Courses Archive
+.tutor-course-filter-wrapper {
+    display: flex;
+	margin: 100px auto!important;
+
+    > div:first-child,
+    > div:last-child {
+        width: 100%;
+        padding: 0;
+        float: none; 
+    }
+    > div:first-child {
+        flex: 1.2;
+		padding-right: 20px;
+
+        .tutor-course-search-field {
+            border-radius: 4px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+    > div:last-child {
+        flex: 2.8;
+        color: $color__text-secondary;
+
+        select[name="tutor_course_filter"] {
+            color: $color__text-secondary;
+            padding: 0px 40px 0 16px;
+            border-radius: 4px;
+        }
+    }
+}
+.tutor-course-filter-container {
+
+    form {
+        position: relative;
+    }
+    input[type='text'] {
+        width: 100%!important;
+        height: 42px!important;
+        border-color: #C4C4C4!important;
+        padding-right: 72px!important;
+    }
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff!important;
+        width: 59px;
+        height: 44px;
+        background: $color__text-main;
+        padding: 0;
+        border-radius: 0 4px 4px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        svg {
+            margin-left: 0;
+        }
+    }
+    input[type='checkbox'] {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        margin: 2px 2px 0 0;
+        border: 1px solid $color__text-secondary;
+        border-radius: 4px;
+        position: relative;
+
+        &::before {
+            content: '';
+            border-style: solid;
+            border-color: $color__text-secondary;
+            border-width: 0 1px 1px 0;
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            width: 4px;
+            height: 8px;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+        &:checked {
+
+            &::before {
+              opacity: 1;
+            }
+        }
+    }
+    h4 {
+        font: {
+            size: 24px!important;
+            weight: 700!important;
+        }
+        margin: 24px 0!important;
+        color: $color__text-secondary!important;
+        letter-spacing: 0.02em;
+    }
+    label {
+        display: flex!important;
+        margin-bottom: 12px;
+        font-size: 18px!important;
+        color: $color__text-secondary!important;
+    }
+}
+.tutor-container {
+    padding: 0;
+
+    .button {
+        max-width: 100%;
+    }
+}
+.tutor-courses {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+div[class*="tutor-course-col"] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.tutor-course-loop {
+    background: #FBFDFF;
+    box-shadow: 0px 2px 15px -10px rgba(0, 0, 0, 0.1), 0px -2px 15px -5px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+.tutor-course-loop-title h2 {
+    font: {
+        size: 24px;
+        weight: 700;
+    }
+}
+.course-features {
+    display: grid;
+    gap: 8px;
+    font-size: 18px;
+    color: $color__text-secondary;
+    margin-top: 12px;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+    }
+    .selector {
+        color: $color__text-light;
+    }
+    .value {
+        font-weight: 600;
+    }
+}
+
+// Single
+.tutor-container {
+    margin: 100px auto;
+
+    .tutor-segment-title {
+        color: $color__text-main;
+        font: {
+            size: 24px;
+            weight: 700;
+        }
+        margin-bottom: 20px;
+    }
+}
+.single-courses .tutor-wrap {
+
+    nav.course-enrolled-nav {
+        border: none;
+        padding: 24px;
+        background: $color__border-input;
+        margin: 0;
+    
+        li {
+            display: flex;
+            
+            a {
+                margin: 0!important;
+                padding: 0;
+                color: $color__text-main;
+            }
+            &.active {
+    
+                a {
+                    border-bottom: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+// Instrutor
+.single-instructor-top {
+    flex-direction: column;
+
+    .tutor-instructor-left {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .tutor-course-filter-wrapper,
+    .tutor-container {
+        max-width: 1440px!important;
+        padding: 0 30px;
+    }
+}

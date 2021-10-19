@@ -23,7 +23,12 @@ class SBHI_Actions {
 	 * Hooks and Filters.
 	 */
 	public function hooks() {
+
 		add_action( 'sbhi_after_header', [ $this, 'get_page_title_section' ], 10 );
+
+		// Tutor.
+		add_action( 'tutor_course/loop/before_meta', [ $this, 'tutor_archive_custom_meta' ] );
+
 	}
 
 	/**
@@ -92,6 +97,37 @@ class SBHI_Actions {
 			$title = '<h2 class="page-title">' . $pagename . '</h2>';
 		}
 		echo wp_kses_post( $title );
+	}
+
+	/**
+	 * Tutor - Archive page meta
+	 */
+	public function tutor_archive_custom_meta() {
+
+		?>
+		<ul class="course-features">
+			<li>
+				<?php
+				if ( get_field( 'course_details' ) ) {
+					echo '<span class="selector">' . esc_html__( 'Details', 'sbhi' ) . '</span>';
+					echo '<span class="value">' . get_field( 'course_details' ) . '</span>'; // phpcs:ignore
+				}
+				?>
+			</li>
+			<li>
+				<span class="selector">Audience</span>
+				<span class="value">SBHI Staff</span>
+			</li>
+			<li>
+				<span class="selector"></span>
+				<span class="value">Service Users</span>
+			</li>
+			<li>
+				<span class="selector"></span>
+				<span class="value">External Organizations</span>
+			</li>
+		</ul>
+		<?php
 	}
 
 }

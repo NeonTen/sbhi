@@ -17,19 +17,9 @@
 
 			<?php
 			echo do_shortcode( '[tutor_course order="desc" count="6" column_per_row="1" course_filter="off" show_paginaton="on"]' );
-			/*
-			* Include the Course article post structure.
-			*/
-			// get_template_part( 'template-parts/content', 'course' );
-			// get_template_part( 'template-parts/content', 'course' ); // Remove this when dynamic.
-			// get_template_part( 'template-parts/content', 'course' ); // Remove this when dynamic.
-			// get_template_part( 'template-parts/content', 'course' ); // Remove this when dynamic.
-			// get_template_part( 'template-parts/content', 'course' ); // Remove this when dynamic.
-			// get_template_part( 'template-parts/content', 'course' ); // Remove this when dynamic.
-
 			?>
 			<footer class="course-bottom">
-				<a href="#" class="button">See all courses</a>
+				<a href="/courses" class="button">See all courses</a>
 			</footer>
 
 		</div>
