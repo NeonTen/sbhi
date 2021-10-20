@@ -1,0 +1,53 @@
+.wpforms-field-container {
+
+    input,
+    select,
+    .iti--allow-dropdown {
+        margin-bottom: 12px;
+    }
+    button {
+        margin-top: 36px;
+    }
+    .wpforms-submit {
+        margin-top: 36px;
+        cursor: pointer;
+    }
+}
+.wpforms-submit-container {
+    button {
+        margin-top: 36px;
+        cursor: pointer;
+    }
+}
+.wpforms-field-row label,
+.wpforms-field.wpforms-field-hp {
+    display: none;
+}
+.wpforms-field-gdpr-checkbox,
+.wpforms-field-checkbox {
+    margin-top: 16px;
+
+    li {
+        display: flex;
+    }
+    input[type="checkbox"] {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        margin-right: 8px;
+    }
+}
+
+.contact-page {
+
+    .left-wrap {
+        input,
+        select,
+        .iti--allow-dropdown {
+            margin-bottom: 20px;
+        }
+    }
+    textarea {
+        min-height: 80px;
+    }
+}

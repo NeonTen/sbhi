@@ -28,6 +28,8 @@ class SBHI_Actions {
 
 		// Tutor.
 		add_action( 'tutor_course/loop/before_meta', [ $this, 'tutor_archive_custom_meta' ] );
+		add_action( 'tutor_course/single/before/inner-wrap', [ $this, 'tutor_single_video_thumb' ] );
+		add_action( 'tutor_course/single/enrolled/before/inner-wrap', [ $this, 'tutor_single_video_thumb' ] );
 
 	}
 
@@ -104,6 +106,9 @@ class SBHI_Actions {
 	 */
 	public function tutor_archive_custom_meta() {
 
+		if ( ! function_exists( 'tutor' ) ) {
+			return;
+		}
 		?>
 		<ul class="course-features">
 			<li>
@@ -127,6 +132,27 @@ class SBHI_Actions {
 				<span class="value">External Organizations</span>
 			</li>
 		</ul>
+		<?php
+	}
+
+	/**
+	 * Tutor - Single Video/Thumb
+	 */
+	public function tutor_single_video_thumb() {
+
+		if ( ! function_exists( 'tutor' ) ) {
+			return;
+		}
+		?>
+		<div class="single-course-thumbnail mb-48">
+			<?php
+			if ( tutor_utils()->has_video_in_single() ) {
+				tutor_course_video();
+			} else {
+				get_tutor_course_thumbnail();
+			}
+			?>
+		</div>
 		<?php
 	}
 

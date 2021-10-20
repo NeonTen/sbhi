@@ -246,7 +246,7 @@ div[class*="tutor-course-col"] {
 }
 
 // Single
-.tutor-container {
+.single-courses .tutor-container {
     margin: 100px auto;
 
     .tutor-segment-title {
@@ -260,6 +260,9 @@ div[class*="tutor-course-col"] {
 }
 .single-courses .tutor-wrap {
 
+    .course-enrolled-nav-wrap {
+        border-bottom: none;
+    }
     nav.course-enrolled-nav {
         border: none;
         padding: 24px;
@@ -286,17 +289,96 @@ div[class*="tutor-course-col"] {
 }
 
 // Instrutor
+.single-instructor-wrap {
+    @extend .box-with-shadow;
+    border: none;
+    
+    .single-instructor-top,
+    .single-instructor-bottom {
+        padding: 0;
+    }
+    .single-instructor-top {
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+}
 .single-instructor-top {
     flex-direction: column;
 
     .tutor-instructor-left {
         display: flex;
+        align-items: center;
     }
+    .instructor-bio {
+        margin-top: 24px;
+    }
+}
+.review-avatar,
+.tutor-dashboard-avater,
+.instructor-avatar {
+
+    .tutor-text-avatar {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 40px;
+    }
+}
+.single-instructor-wrap .instructor-name {
+    max-width: 100%;
+
+    h3 a,
+    h4 {
+        font: {
+            size: 18px;
+            weight: 700;
+        }
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+    h4 {
+        text-transform: none;
+        color: $color__text-secondary;
+    }
+}
+.tutor-text-mute {
+    color: $color__text-main;
+}
+
+// Sidebar
+.tutor-price-preview-box {
+    @extend .box-with-shadow;
+    border: none;
+}
+
+.plyr__video-embed iframe,
+.plyr__video-wrapper--fixed-ratio video {
+    width: 100%;
+    height: 100%;
+}
+.single-courses,
+.single-lesson {
+    .write-course-review-link-btn,
+    .tutor-btn,
+    .tutor-button,
+    .course-complete-button {
+        @extend button;
+        border-radius: 100px!important;
+    }
+}
+.tutor-single-page-top-bar .tutor-single-lesson-segment button.course-complete-button {
+    padding-bottom: 0;
+}
+.tutor-lesson-sidebar-hide-bar {
+    background: $color__primary;
+}
+.tutor-single-page-top-bar a.tutor-topbar-home-btn {
+    color: #fff;
 }
 
 @media screen and (min-width: 1440px) {
     .tutor-course-filter-wrapper,
-    .tutor-container {
+    .single-courses .tutor-container {
         max-width: 1440px!important;
         padding: 0 30px;
     }
