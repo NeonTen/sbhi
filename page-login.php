@@ -23,15 +23,21 @@ get_header();
 					?>
 
 					<div class="left-wrap">
-						<?php //echo do_shortcode( '[forminator_form id="20"]' ); ?>
-						<?php echo do_shortcode( '[wpforms id="151" title="false"]' ); ?>
-						
+						<?php
+						if ( get_field( 'login_form_shortcode' ) ) {
+							echo do_shortcode( get_field( 'login_form_shortcode' ) );
+						}
+						?>
 						<hr />
 						<p>Not account yet?</p>
 						<p>Please <strong>Register</strong> to get access to free online courses</p>
 					</div>
-					<div class="right-wrap dark-bg mb-24">
-						<?php echo do_shortcode( '[wpforms id="152" title="false"]' ); ?>
+					<div class="right-wrap dark-bg">
+						<?php
+						if ( get_field( 'registration_form_shortcode' ) ) {
+							echo do_shortcode( get_field( 'registration_form_shortcode' ) );
+						}
+						?>
 					</div>
 
 					<?php

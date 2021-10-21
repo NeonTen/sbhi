@@ -1200,6 +1200,10 @@ textarea {
 	text-decoration: underline;
 }
 
+.login-page .right-wrap {
+	border-radius: 0 12px 12px 0;
+}
+
 .login-page .right-wrap .login-title {
 	margin-bottom: 24px;
 }
