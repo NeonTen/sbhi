@@ -28,6 +28,7 @@
     }
     .right-wrap {
         border-radius: 0 12px 12px 0;
+
         .login-title {
             margin-bottom: 24px;
         }
@@ -52,6 +53,18 @@
         input,
         input:focus {
             border-color: red;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .login-page {
+
+        .wrapper {
+            flex-direction: column;
+        }
+        .right-wrap {
+            border-radius: 0 0 12px 12px;
         }
     }
 }

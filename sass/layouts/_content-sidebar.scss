@@ -50,4 +50,15 @@
 	}
 }
 
+@media screen and (max-width: 720px) {
+	.main-wrapper {
+		.container {
+			flex-direction: column;
+		}
+		.site-main {
+			padding-right: 0;
+		}
+	}
+}
+
 @import "no-sidebar";

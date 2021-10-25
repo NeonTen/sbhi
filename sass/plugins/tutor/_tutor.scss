@@ -1,8 +1,8 @@
 // Dashboard
 
 .tutor-dashboard {
-    max-width: 1200px;
     margin: 100px auto;
+    padding: 0 30px;
 
     .tutor-dashboard-left-menu {
 
@@ -98,6 +98,8 @@
 .tutor-course-filter-wrapper {
     display: flex;
 	margin: 100px auto!important;
+    max-width: 100%!important;
+    padding: 0 30px;
 
     > div:first-child,
     > div:last-child {
@@ -106,7 +108,7 @@
         float: none; 
     }
     > div:first-child {
-        flex: 1.2;
+        flex: 0.96;
 		padding-right: 20px;
 
         .tutor-course-search-field {
@@ -116,7 +118,7 @@
         }
     }
     > div:last-child {
-        flex: 2.8;
+        flex: 3.04;
         color: $color__text-secondary;
 
         select[name="tutor_course_filter"] {
@@ -248,6 +250,8 @@ div[class*="tutor-course-col"] {
 // Single
 .single-courses .tutor-container {
     margin: 100px auto;
+    max-width: 100%;
+    padding: 0 30px;
 
     .tutor-segment-title {
         color: $color__text-main;
@@ -380,6 +384,12 @@ div[class*="tutor-course-col"] {
     .tutor-course-filter-wrapper,
     .single-courses .tutor-container {
         max-width: 1440px!important;
-        padding: 0 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .tutor-dashboard {
+        max-width: 1200px;
+        padding: 0;
     }
 }

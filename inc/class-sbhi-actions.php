@@ -69,7 +69,7 @@ class SBHI_Actions {
 		<div class="breadcrumbs">
 			<a href="#">Home</a>
 			<div class="separator">//</div>
-			<span>All Courses</span>
+			<span><?php echo wp_kses_post( $this->get_pagename() ); ?></span>
 		</div>
 		<?php
 	}
@@ -80,7 +80,7 @@ class SBHI_Actions {
 	 */
 	public function get_pagename() {
 
-		$pagename = 'all';
+		$pagename = wp_title( '', false );
 		if ( is_post_type_archive( 'courses' ) ) {
 			$pagename = 'All Courses';
 		}
@@ -92,13 +92,9 @@ class SBHI_Actions {
 	 */
 	public function get_page_title() {
 
-		$pagename = $this->get_pagename();
-		$title    = '<h2 class="page-title">' . wp_title( '', false ) . '</h2>';
-
-		if ( 'all' !== $pagename ) {
-			$title = '<h2 class="page-title">' . $pagename . '</h2>';
-		}
+		$title = '<h2 class="page-title">' . $this->get_pagename() . '</h2>';
 		echo wp_kses_post( $title );
+
 	}
 
 	/**

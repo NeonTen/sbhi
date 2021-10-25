@@ -1,23 +1,12 @@
-.post-type-archive-courses .courses-wrapper {
-    
-    .container {
-		display: flex;
-		gap: 20px;
-	}
-	.site-main {
-		flex: 3;
-	}
-	.widget-area {
-		flex: 1;
-	}
-    .courses-lists {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    }
-    .post-thumbnail {
-        max-height: 170px;
-    }
-    .button {
-        padding: 0 20px;
+.post-type-archive-courses {
+
+    .tutor-courses {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+        div[class*="tutor-course-col"] {
+            width: 100%;
+        }
     }
 }
 
@@ -33,5 +22,14 @@
         .button {
             margin-top: 32px;
         }
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .tutor-course-filter-wrapper {
+        flex-direction: column;
+    }
+    .tutor-course-filter-container {
+        display: none;
     }
 }
