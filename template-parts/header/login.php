@@ -17,15 +17,17 @@ if ( is_user_logged_in() ) {
 		echo '<div class="icon blue">' . get_svg( 'icons/user', false ); //phpcs:ignore
 		echo '</a>';
 		echo '</div>';
-
+		echo '<div class="dropdown">';
+		printf( '<a href="%1$s">%2$s</a>', esc_url( wp_logout_url() ), esc_html__( 'Logout', 'sbhi' ) );
+		echo '</div>';
 	echo '</div>';
 
 } else {
 	echo '<div class="login-wrap logged-out">';
 
 	printf(
-		'<a href="%1$s" class="button border-button">%2$s%3$s</a>
-		<a href="%1$s" class="button">%4$s%5$s</a>',
+		'<a href="%1$s" class="register-button button border-button orange-hover">%2$s%3$s</a>
+		<a href="%1$s" class="login-button button">%4$s%5$s</a>',
 		esc_url( wp_login_url() ),
 		esc_html__( 'Register', 'sbhi' ),
 		get_svg( 'icons/pen', false ), //phpcs:ignore

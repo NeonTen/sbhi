@@ -6,7 +6,6 @@
 
     .login-title {
         font-size: 60px;
-        color: $color__text-secondary;
     }
     .wrapper {
         display: flex;
@@ -66,5 +65,14 @@
         .right-wrap {
             border-radius: 0 0 12px 12px;
         }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .login-page .left-wrap .login-title {
+        margin-bottom: 30px;
+    }
+    .login-page .login-title {
+        font-size: 24px;
     }
 }

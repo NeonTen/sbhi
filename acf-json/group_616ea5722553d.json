@@ -20,6 +20,54 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_61823e1e318c5",
+            "label": "Audience",
+            "name": "audience",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "SBHI Volunteer": "SBHI Volunteer",
+                "SBHI Employee": "SBHI Employee",
+                "Family Carer": "Family Carer",
+                "Members": "Members",
+                "Service User": "Service User",
+                "External Organization": "External Organization",
+                "School": "School"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "array",
+            "save_custom": 0
+        },
+        {
+            "key": "field_61ddbe10765da",
+            "label": "Featured image alt text",
+            "name": "featured_image_alt_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -39,5 +87,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634641321
+    "modified": 1645023525
 }

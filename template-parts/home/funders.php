@@ -28,24 +28,27 @@
 				// Load sub field value.
 				$image = get_sub_field( 'funder_image', 'option' );
 				$url   = get_sub_field( 'funder_link', 'option' );
+				$alt   = get_sub_field( 'funder_image_alt_text', 'option' );
 
 				if ( $url && $image ) {
 					printf(
 						'<li class="funder-list">
 							<a href="%s">
-								<img src="%s" alt="">
+								<img src="%s" alt="%s">
 							</a>
 						</li>',
 						esc_url( $url ),
-						esc_url( $image )
+						esc_url( $image ),
+						esc_html( $alt )
 					);
 				}
 				if ( ! $url && $image ) {
 					printf(
 						'<li class="funder-list">
-							<img src="%s" alt="">
+							<img src="%s" alt="%s">
 						</li>',
-						esc_url( $image )
+						esc_url( $image ),
+						esc_html( $alt )
 					);
 				}
 

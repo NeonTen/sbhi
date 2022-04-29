@@ -30,6 +30,7 @@
 				$hover_icon = get_sub_field( 'audience_hover_icon', 'option' );
 				$title      = get_sub_field( 'audience_title', 'option' );
 				$text       = get_sub_field( 'audience_text', 'option' );
+				$cat_id     = get_sub_field( 'audience_button_link', 'option' );
 
 				printf(
 					'<li class="audience-list">
@@ -37,12 +38,13 @@
 						<div class="icon hover">%2$s</div>
 						<h2 class="entry-title">%3$s</h2>
 						<p class="entry-content">%4$s</p>
-						<a href="/courses" class="button shadow">%5$s</a>
+						<a href="/courses/?course_category=%5$s" class="button shadow">%6$s</a>
 					</li>',
 					file_get_contents( $icon ), // phpcs:ignore
 					file_get_contents( $hover_icon ), // phpcs:ignore
 					esc_html( $title ),
 					esc_html( $text ),
+					$cat_id,
 					esc_html__( 'See Courses', 'sbhi' )
 				);
 

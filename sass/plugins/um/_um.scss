@@ -1,0 +1,88 @@
+.um-form {
+
+    input,
+    input[type="text"],
+    input[type="password"] {
+        margin-bottom: 10px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px 0;
+        cursor: pointer;
+    }
+    .um-field-username_b {
+        margin-top: 24px;
+    }
+}
+
+.login-page {
+
+    .right-wrap {
+     
+        .um-form {
+            .um-field-checkbox {
+                margin-top: 16px;
+
+                input[type="checkbox"] {
+                    width: 24px;
+                    height: 24px;
+                    flex-shrink: 0;
+                    margin-right: 8px;
+                    float: left;
+                }
+                .um-field-error {
+                    margin-top: 10px;
+                }
+            }
+            input[type="submit"] {
+                @extend button.border-button;
+
+                &:hover {
+                    border-color: #fff;
+                }
+            }
+            select {
+                margin-bottom: 16px;
+            }
+            .um-field-area {
+                position: relative;
+            }
+            .select2-container .select2-selection--single .select2-selection__rendered {
+                position: absolute;
+                top: 11px;
+                left: 10px;
+
+                .select2-selection__clear {
+                    display: none;
+                }
+            }
+            .select2-selection__placeholder {
+                font-size: 18px!important;
+                color: $color__text-secondary;
+                opacity: 0.6;
+            }
+        }
+        .select2-container--default .select2-selection--single {
+            height: 48px;
+            margin-bottom: 24px;
+        }
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background: none;
+        }
+        .select2-results__option[aria-selected] {
+            color: $color__text-main;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow b {
+            margin-left: -10px;
+            margin-top: 7px;
+        }
+        .select2-container--open .select2-dropdown {
+            top: -25px;
+        }
+    }
+}
+.um-field-label {
+    position: absolute;
+    z-index: -1;
+}

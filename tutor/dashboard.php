@@ -144,7 +144,8 @@ do_action('tutor_dashboard/before/wrap');
                         <?php
                         $dashboard_pages = tutils()->tutor_dashboard_nav_ui_items();
                         foreach ($dashboard_pages as $dashboard_key => $dashboard_page) {
-                            if ( 'purchase_history' === $dashboard_key ) {
+                            // echo $dashboard_key;
+                            if ( 'purchase_history' === $dashboard_key || 'withdraw' === $dashboard_key ) {
                                 continue;
                             }
                             $menu_title = $dashboard_page;

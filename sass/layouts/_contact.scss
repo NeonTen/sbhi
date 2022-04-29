@@ -6,7 +6,7 @@
         margin-left: auto;
         margin-right: auto;
         border: 1px solid $color__border-input;
-        padding: 48px;
+        padding: 24px;
         border-radius: 12px;
     }
     .left-wrap,
@@ -79,10 +79,17 @@
 
         .wrapper {
             flex-direction: column;
-            padding: 24px;
+            padding: 0;
+            border: none;
         }
         .left-wrap {
             padding: 0;
+            margin-bottom: 46px;
         }
+    }
+}
+@media screen and (max-width: 360px) {
+    .wpforms-recaptcha-container .g-recaptcha > div {
+        width: 100%!important;
     }
 }

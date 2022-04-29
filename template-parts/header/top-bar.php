@@ -16,13 +16,18 @@ $donate_url = get_field( 'donate_button_link', 'option' );
 			<?php
 			if ( get_field( 'header_email', 'option' ) ) {
 				printf(
-					'<a href="%1$s">%1$s</a>',
-					get_field( 'header_email', 'option' ) // phpcs:ignore
+					'<a href="mailto:%1$s">%2$s%1$s</a>',
+					get_field( 'header_email', 'option' ), // phpcs:ignore
+					get_svg( 'icons/mail', false ) // phpcs:ignore
 				);
 			}
 
 			if ( get_field( 'header_number', 'option' ) ) {
-				echo '<span>' . get_field( 'header_number', 'option' ) . '</span>'; // phpcs:ignore
+				printf(
+					'<a href="tel:%1$s">%2$s%1$s</a>',
+					get_field( 'header_number', 'option' ), // phpcs:ignore
+					get_svg( 'icons/phone', false ) // phpcs:ignore
+				);
 			}
 			?>
 		</div>
@@ -34,7 +39,7 @@ $donate_url = get_field( 'donate_button_link', 'option' );
 			<?php
 			if ( $donate_url ) {
 				?>
-				<a href="<?php echo esc_url( $donate_url ); ?>" class="button border-button dark-bg">
+				<a href="<?php echo esc_url( $donate_url ); ?>" class="donate-button button border-button orange-hover" target="_blank">
 					<?php
 					esc_html_e( 'Donate', 'sbhi' );
 					get_svg( 'icons/hand-heart' );

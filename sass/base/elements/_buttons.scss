@@ -7,19 +7,19 @@ input[type="submit"] {
 	justify-content: center;
 	align-items: center;
 	max-width: 250px;
-	height: 50px;
+	height: 46px;
 	background: $color__primary-button;
 	color: #fff;
 	border: 1px solid transparent;
 	border-radius: 100px;
 	font: {
 		family: $font__secondary;
-		size: 18px;
+		size: 16px;
 		weight: 700;
 	}
 	line-height: 1;
 	letter-spacing: 0.04em;
-	padding: 0 30px;
+	padding: 0 24px;
 	text-transform: uppercase;
 	white-space: nowrap;
 	transition: all 0.2s linear;
@@ -69,7 +69,22 @@ input[type="submit"] {
 	&.shadow {
 		@include shadow;
 	}
+	&.orange-hover {
+		&:hover,
+		&:active,
+		&:focus {
+			background: $color__primary;
+			border-color: $color__primary;
+			color: #fff;
+
+			path {
+				fill: #fff;
+			}
+		}
+	}
 	svg {
+		flex-shrink: 0;
+		width: 16px;
 		margin-left: 10px;
 	}
 	&.button-full {
@@ -96,6 +111,10 @@ input[type="submit"] {
 		.button {
 			padding: 0 20px;
 		}
+	}
+	button,
+	.button {
+		max-width: fit-content!important;
 	}
 }
 

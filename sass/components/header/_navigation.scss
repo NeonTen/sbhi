@@ -68,8 +68,7 @@
 		padding: 0 10px;
 		position: relative;
 
-		&:hover > a,
-		&.focus > a {
+		&:hover > a {
 			border-color: $color__primary;
 		}
 	}
@@ -126,8 +125,10 @@
         grid-template-columns: 1fr 1fr;
     }
 	.main-navigation {
-		order: 1;
-		grid-column: 1/-1;
+		width: auto;
+		position: absolute;
+		top: 0;
+		right: 30px;
 
 		button.menu-toggle {
 			width: 100%;
@@ -137,8 +138,8 @@
 			padding: 0 20px;
 			font-size: 16px;
 			color: $color__text-main;
-			border-radius: 0;
-			border: 1px solid $color__border-input;
+			// border-radius: 0;
+			// border: 1px solid $color__border-input;
 			background: #fff;
 			margin-top: 10px;
 	
@@ -150,6 +151,9 @@
 			border: 1px solid $color__border-input;
 			margin-top: -1px;
 			padding: 10px;
+			background: #fff;
+			position: relative;
+			z-index: 10;
 		}
 		li {
 			margin: 3px 0;
@@ -164,5 +168,9 @@
 		a {
 			padding: 0;
 		}
+	}
+	.top-bar .right-wrap .donate-button,
+	.main-header .right-wrap .register-button {
+		display: none;
 	}
 }

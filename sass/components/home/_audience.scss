@@ -14,6 +14,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
         padding: 32px;
         border: 1px solid $color__border;
         border-radius: 12px;
@@ -28,11 +29,6 @@
             .hover {
                 display: initial;
             }
-            .button {
-                color: $color__primary-button;
-		        border-color: $color__primary-button;
-		        background: $color__secondary-button;
-            }
         }
     }
     .entry-title {
@@ -42,5 +38,6 @@
     .icon,
     .entry-content {
         margin-bottom: 32px;
+        text-align: center;
     }
 }

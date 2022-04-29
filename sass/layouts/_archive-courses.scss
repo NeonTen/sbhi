@@ -29,7 +29,14 @@
     .tutor-course-filter-wrapper {
         flex-direction: column;
     }
-    .tutor-course-filter-container {
+    .tutor-course-filter-container form > div {
+        display: none;
+    }
+    .tutor-course-filter-container form .tutor-course-search-field {
+        display: block;
+        margin-bottom: 32px;
+    }
+    .tutor-course-archive-results-wrap {
         display: none;
     }
 }

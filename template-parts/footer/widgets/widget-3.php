@@ -5,33 +5,38 @@
  * @package SBHI
  */
 
-$donate_url = get_field( 'donate_button_link', 'option' );
 ?>
 
 <div class="f-widget">
+
 	<?php
-	if ( get_field( 'footer_links_1_title', 'option' ) ) {
-		echo '<h3 class="widget-title">' . get_field( 'footer_links_1_title', 'option' ) . '</h3>'; // phpcs:ignore
+	if ( get_field( 'footer_course_categories_title', 'option' ) ) {
+		echo '<h3 class="widget-title">' . get_field( 'footer_course_categories_title', 'option' ) . '</h3>'; // phpcs:ignore
 	}
-	// Check Footre link lists 1 exists.
-	if ( have_rows( 'footer_link_lists_1', 'option' ) ) :
+
+	// Check Category lists exists.
+	if ( have_rows( 'footer_category_lists', 'option' ) ) :
 
 		echo '<ul class="f-links">';
 
 		// Loop through rows.
-		while ( have_rows( 'footer_link_lists_1', 'option' ) ) :
+		while ( have_rows( 'footer_category_lists', 'option' ) ) :
 			the_row();
 
 			// Load sub field value.
-			$link = get_sub_field( 'footer_link', 'option' );
+			$terms = get_sub_field( 'footer_categories', 'option' );
 
-			printf(
-				'<li>
-					<a href="%s">%s</a>
-				</li>',
-				esc_url( $link['url'] ),
-				esc_html( $link['title'] )
-			);
+			foreach ( $terms as $term ) {
+				$term_link = get_term_link( $term->term_id, $term->taxonomy );
+
+				printf(
+					'<li>
+						<a href="%s">%s</a>
+					</li>',
+					esc_url( $term_link ),
+					esc_html( $term->name )
+				);
+			}
 
 		endwhile;
 
@@ -39,12 +44,12 @@ $donate_url = get_field( 'donate_button_link', 'option' );
 
 	endif;
 
-	if ( $donate_url ) {
+	if ( get_field( 'footer_category_button_url', 'option' ) ) {
 		?>
-		<a href="<?php echo esc_url( $donate_url ); ?>" class="button">
+		<a href="<?php echo esc_url( get_field( 'footer_category_button_url', 'option' ) ); ?>" class="button border-button" target="_blank">
 			<?php
-			esc_html_e( 'Donate', 'sbhi' );
-			get_svg( 'icons/hand-heart' );
+			esc_html_e( 'SBHI.ie', 'sbhi' );
+			get_svg( 'icons/globe' );
 			?>
 		</a>
 		<?php

@@ -41,19 +41,26 @@ class SBHI_Actions {
 		if ( 'courses' !== get_post_type() && ! is_page_template( 'page-contact.php' ) ) {
 			return;
 		}
+		if ( 'courses' === get_post_type() && is_single() ) {
+			$class = ' course-single-page';
+		}
 
 		?>
-		<section class="header-after">
+		<section class="header-after<?php echo $class ? $class : ''; // phpcs:ignore ?>">
 			<div class="container">
 
 				<?php
-				if ( get_field( 'breadcrumb_image', 'option' ) ) {
-					echo '<div class="left-wrap"><img src="' . get_field( 'breadcrumb_image', 'option' ) . '"></div>'; // phpcs:ignore
-				}
+				// if ( get_field( 'breadcrumb_image', 'option' ) ) {
+				// 	echo '<div class="left-wrap"><img src="' . get_field( 'breadcrumb_image', 'option' ) . '"></div>'; // phpcs:ignore
+				// }
 				?>
 				<div class="right-wrap">
 					<?php $this->get_breadcrumbs(); ?>
-					<?php $this->get_page_title(); ?>
+					<?php
+					if ( ! is_single() ) {
+						$this->get_page_title();
+					}
+					?>
 				</div>
 
 			</div>
@@ -67,7 +74,7 @@ class SBHI_Actions {
 	public function get_breadcrumbs() {
 		?>
 		<div class="breadcrumbs">
-			<a href="#">Home</a>
+			<a href="<?php echo esc_url( trailingslashit( home_url() ) ); ?>">Home</a>
 			<div class="separator">//</div>
 			<span><?php echo wp_kses_post( $this->get_pagename() ); ?></span>
 		</div>
@@ -105,28 +112,38 @@ class SBHI_Actions {
 		if ( ! function_exists( 'tutor' ) ) {
 			return;
 		}
+		$audiences = get_field( 'audience' );
+		$count     = 0;
 		?>
 		<ul class="course-features">
 			<li>
 				<?php
 				if ( get_field( 'course_details' ) ) {
-					echo '<span class="selector">' . esc_html__( 'Details', 'sbhi' ) . '</span>';
+					echo '<span class="selector">' . esc_html__( 'Details: ', 'sbhi' ) . '</span>';
 					echo '<span class="value">' . get_field( 'course_details' ) . '</span>'; // phpcs:ignore
 				}
 				?>
 			</li>
-			<li>
-				<span class="selector">Audience</span>
-				<span class="value">SBHI Staff</span>
-			</li>
-			<li>
-				<span class="selector"></span>
-				<span class="value">Service Users</span>
-			</li>
-			<li>
-				<span class="selector"></span>
-				<span class="value">External Organizations</span>
-			</li>
+			<?php
+			if ( $audiences ) {
+				foreach ( $audiences as $audience ) {
+					if ( 0 === $count ) {
+						$text = esc_html__( 'Audience: ', 'sbhi' );
+					} else {
+						$text = '';
+					}
+					printf(
+						'<li>
+							<span class="selector">%s</span>
+							<span class="value">%s</span>
+						</li>',
+						$text, // phpcs:ignore
+						esc_html( $audience['value'] )
+					);
+					++$count;
+				}
+			}
+			?>
 		</ul>
 		<?php
 	}

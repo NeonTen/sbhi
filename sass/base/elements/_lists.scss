@@ -22,9 +22,11 @@ dd {
 	margin: 0 1.5em 1.5em;
 }
 
-.custom-list {
+.custom-list,
+.tutor-course-content-content ul {
 	display: grid;
 	gap: 12px;
+	margin: 30px 0 30px 30px;
 	
 	li {
 		background: url('images/icons/square-checked.svg') left center no-repeat;

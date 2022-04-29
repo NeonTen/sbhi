@@ -197,3 +197,76 @@ require get_template_directory() . '/inc/class-sbhi-actions.php';
  * Load ACF Options panel.
  */
 require get_template_directory() . '/inc/class-acf-options-panel.php';
+
+
+if(!is_admin() && $GLOBALS["pagenow"] != "wp-login.php"){
+	function unload_um_styles(){
+
+		// Deregister & dequeue styles
+		wp_dequeue_style(array(
+			"um_fonticons_ii",
+			"um_fonticons_fa",
+			// "select2",
+			"um_modal",
+			"um_styles",
+			"um_members",
+			"um_profile",
+			"um_account",
+			"um_misc",
+			"um_fileupload",
+			"um_datetime",
+			"um_datetime_date",
+			"um_datetime_time",
+			"um_raty",
+			"um_scrollbar",
+			"um_crop",
+			"um_tipsy",
+			"um_responsive",
+			"um_default_css",
+		));
+
+		wp_deregister_style(array(
+			"um_fonticons_ii",
+			"um_fonticons_fa",
+			// "select2",
+			"um_modal",
+			"um_styles",
+			"um_members",
+			"um_profile",
+			"um_account",
+			"um_misc",
+			"um_fileupload",
+			"um_datetime",
+			"um_datetime_date",
+			"um_datetime_time",
+			"um_raty",
+			"um_scrollbar",
+			"um_crop",
+			"um_tipsy",
+			"um_responsive",
+			"um_default_css",
+		));
+
+	};
+	add_action("wp_print_styles","unload_um_styles");
+};
+
+add_filter('login_errors','login_error_message');
+
+function login_error_message($error){
+    //check if that's the error you are looking for
+    // $pos = strpos($error, 'invalid_username');
+    if ( 'Incorrect username or password.' === $error ) {
+        //its the right error so you can overwrite it
+        $error = '<span style="color: #000;">Incorrect username or password. Please try again.</span>';
+    }
+    return $error;
+}
+
+function tutor_primary_author() {
+	if ( function_exists('tutor')) {
+		$tutor_post_type = tutor()->course_post_type;
+		add_post_type_support( $tutor_post_type, 'author' );
+	}
+}
+add_action('init', 'tutor_primary_author', 999 );

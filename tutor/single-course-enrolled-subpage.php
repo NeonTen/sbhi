@@ -25,6 +25,10 @@ $course_subpage = $wp_query->query_vars['course_subpage'];
             <div class="tutor-col-8  tutor-col-md-100">
                 <?php do_action('tutor_course/single/enrolled/before/inner-wrap'); ?>
                 <?php // tutor_course_enrolled_lead_info(); ?>
+                <?php
+                    $SBHI_Actions = new SBHI_Actions();
+                    $SBHI_Actions->get_page_title();
+                ?>
                 <?php tutor_course_enrolled_nav(); ?>
                 <?php do_action("tutor_course/single/enrolled/{$course_subpage}", get_the_ID()); ?>
                 <?php do_action('tutor_course/single/enrolled/after/inner-wrap'); ?>

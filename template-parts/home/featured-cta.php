@@ -14,7 +14,7 @@ $button_url = get_field( 'featured_button_link', 'option' );
 	<?php
 	if ( get_field( 'featured_image', 'option' ) ) {
 		echo '<div class="left-wrap">';
-		echo '<img src="' . get_field( 'featured_image', 'option' ) . '">'; // phpcs:ignore
+		echo '<img src="' . get_field( 'featured_image', 'option' ) . '" alt="Smiling young girl in a wheelchair who is an SBHI service user.">'; // phpcs:ignore
 		echo '</div>';
 	}
 	?>
@@ -23,7 +23,7 @@ $button_url = get_field( 'featured_button_link', 'option' );
 
 		<?php
 		if ( get_field( 'featured_title', 'option' ) ) {
-			echo '<h2 class="big-title">' . get_field( 'featured_title', 'option' ) . '</h2>'; // phpcs:ignore
+			echo '<h1 class="big-title">' . get_field( 'featured_title', 'option' ) . '</h1>'; // phpcs:ignore
 		}
 
 		if ( get_field( 'featured_content', 'option' ) ) {

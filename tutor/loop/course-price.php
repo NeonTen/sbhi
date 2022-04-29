@@ -15,7 +15,7 @@
 <div class="tutor-course-loop-price">
     <?php
     $course_id = get_the_ID();
-    $enroll_btn = '<div  class="tutor-public-course-start-learning">' . apply_filters( 'tutor_course_restrict_new_entry', '<a class="button" href="'. get_the_permalink(). '">' . __('Get Enrolled', 'tutor') . get_svg( 'icons/cart', false ) . '</a>' ) . '</div>';
+    $enroll_btn = '<div class="tutor-public-course-start-learning">' . apply_filters( 'tutor_course_restrict_new_entry', '<a class="button" href="'. get_the_permalink(). '" title="' . __( 'Get Enrolled', 'tutor' ) . ' - ' . get_the_title() . '">' . __( 'Get Enrolled', 'tutor' ) . get_svg( 'icons/cart', false ) . '</a>' ) . '</div>';
     $default_price = apply_filters('tutor-loop-default-price', __('Free', 'tutor'));
     $price_html = '<div class=""> '.$enroll_btn. '</div>';
     if (tutor_utils()->is_course_purchasable()) {

@@ -4,12 +4,13 @@
 
     .steps-lists {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 128px;
         justify-content: center;
     }
     .entry-title {
         margin-bottom: 16px;
+        text-align: center;
     }
     .entry-content {
         margin-bottom: 0;
@@ -37,4 +38,16 @@
         }
     }
 
+}
+
+@media screen and (max-width: 1050px) {
+    .steps-wrapper .steps-lists {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .steps-wrapper .steps-lists {
+        grid-template-columns: 1fr;
+    }
 }

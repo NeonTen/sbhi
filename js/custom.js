@@ -41,3 +41,22 @@ jQuery(document).ready(function() {
         }
     });
 });
+
+// Custom
+jQuery(document).ready(function() {
+    // Add title and Fix placeholder
+    var key1 = jQuery('.login-page .left-wrap .um-field-username').find('input').data('key');
+    var key2 = jQuery('.login-page .left-wrap .um-field-password').find('input').data('key');
+    // if ( key1 == 'username' ) {
+    //     jQuery('.login-page .left-wrap .um-field-username').find('input').attr('title', 'login email field');
+    // }
+    if ( key2 == 'user_password' ) {
+        // jQuery('.login-page .left-wrap .um-field-password').find('input').attr('title', 'login password field');
+        jQuery('.login-page .left-wrap .um-field-password').find('input').attr('placeholder', 'Password');
+    }
+
+    var regMessage = jQuery('.um-register .um-postmessage').html().trim();
+    if ( regMessage == 'Thank you for registering. Before you can login we need you to activate your account by clicking the activation link in the email we just sent you.' ) {
+        jQuery('.um-register .um-postmessage').html('Thank you for registering. Before you can login we need you to activate your account by clicking the activation link in the email we just sent you.<br><br>If you have not received this email within 5 minutes, please check your Junk/Spam email folders.')
+    }
+});

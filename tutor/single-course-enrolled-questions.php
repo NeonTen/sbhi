@@ -23,6 +23,10 @@ get_header();
 				<div class="tutor-col-8  tutor-col-md-100">
                     <?php do_action( 'tutor_course/single/enrolled/before/inner-wrap' ); ?>
 					<?php // tutor_course_enrolled_lead_info(); ?>
+                    <?php
+                        $SBHI_Actions = new SBHI_Actions();
+                        $SBHI_Actions->get_page_title();
+                    ?>
 					<?php tutor_course_enrolled_nav(); ?>
 					<?php tutor_course_question_and_answer(); ?>
                     <?php do_action( 'tutor_course/single/enrolled/after/inner-wrap' ); ?>

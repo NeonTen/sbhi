@@ -22,14 +22,28 @@
     .separator {
         margin: 0 6px;
     }
+    .page-title {
+        margin-bottom: 0;
+    }
 }
 
 @media screen and (min-width: 850px) {
     .header-after {
-        padding: 10px 80px;
+        padding: 12px 0 0 0;
 
         .container {
-            grid-template-columns: minmax(300px, 500px) 1fr;
+            grid-template-columns: 1fr;
         }
+        .breadcrumbs {
+            margin-bottom: 0;
+        }
+        // &.course-single-page {
+        //     // padding: 12px 0 0 0;
+
+        //     .left-wrap {
+        //         display: none;
+        //     }
+            
+        // }
     }
 }

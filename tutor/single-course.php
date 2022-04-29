@@ -22,6 +22,10 @@ do_action('tutor_course/single/before/wrap');
             <div class="tutor-col-8 tutor-col-md-100">
 	            <?php do_action('tutor_course/single/before/inner-wrap'); ?>
 	            <?php //tutor_course_lead_info(); ?>
+                <?php
+                    $SBHI_Actions = new SBHI_Actions();
+                    $SBHI_Actions->get_page_title();
+                ?>
                 <?php tutor_course_enrolled_nav(); ?>
 	            <?php tutor_course_content(); ?>
 	            <?php tutor_course_benefits_html(); ?>

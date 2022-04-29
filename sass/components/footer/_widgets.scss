@@ -1,23 +1,42 @@
 .footer-widgets {
-
     padding: 50px 0;
-    border-top: 1px solid $color__text-main;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    background: #f5f5f5;
 
     .container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-columns: 1fr;
         gap: 48px;
     }
 }
 .f-widget {
-    .f-site-name,
+
     .widget-title {
         font-size: 24px;
         color: $color__text-main;
     }
+    .f-site-name {
+        h2 {
+            font-size: 24px;
+            margin: 0;
+            color: $color__text-main;
+        }
+    }
     .widget-title {
         margin-bottom: 24px;
+    }
+    .top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+    .f-logo {
+        flex-shrink: 0;
+        > a {
+            display: flex;
+            max-width: 80px;
+            margin-right: 16px;
+        }
     }
     .f-links {
         display: grid;
@@ -39,19 +58,31 @@
             }
         }
     }
+    .about-text {
+        p {
+            font-size: 16px;
+        }
+        a {
+            color: $color__text-main;
+            font-style: italic;
+        }
+    }
     .button {
         margin-top: 48px;
-        max-width: 165px;
+        max-width: 130px;
     }
     .social-icons {
         display: flex;
         margin-top: 48px;
 
         li {
-            margin-right: 4px;
+            margin-right: 8px;
 
             &:last-of-type {
                 margin-right: 0;
+            }
+            svg {
+                width: 36px;
             }
             path {
                 transition: all 0.2s linear;
@@ -65,10 +96,40 @@
     }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 550px) {
     .footer-widgets {
         .container {
-            grid-template-columns: minmax(170px, 176px) minmax(250px, 363px) minmax(162px, 1fr) minmax(240px, 1fr) minmax(162px, 1fr);
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .f-widget .button {
+        max-width: fit-content;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .footer-widgets {
+        .container {
+            grid-template-columns: minmax(250px, 1fr) repeat(auto-fit, minmax(180px, 1fr));
         }
     }
 }
+
+@media screen and (min-width: 1170px) {
+    .footer-widgets {
+        .container {
+            grid-template-columns: minmax(450px, 360px) minmax(162px, 1fr) minmax(240px, 1fr) minmax(162px, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .footer-widgets {
+        .container {
+            grid-template-columns: minmax(450px, 360px) minmax(162px, 1fr) minmax(240px, 1fr) minmax(162px, 1fr);
+        }
+    }
+}
+
+
+

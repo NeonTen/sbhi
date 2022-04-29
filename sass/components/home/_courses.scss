@@ -12,7 +12,7 @@
     }
     .tutor-course-header > a {
         display: flex;
-        height: 204px;
+        height: 234px;
         overflow: hidden;
 
         img {
@@ -32,4 +32,16 @@
         margin-top: 26px;
     }
 
+}
+
+@media screen and (max-width: 650px) {
+    .courses-wrapper {
+    
+        .courses-lists {
+    
+            .tutor-courses {
+                gap: 20px 0;
+            }
+        }
+    }
 }

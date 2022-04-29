@@ -5,6 +5,9 @@
  * @package SBHI
  */
 
+if ( ! have_rows( 'testimonials_lists', 'option' ) && ! get_field( 'testimonials_section_title', 'option' ) ) {
+	return;
+}
 ?>
 
 <section class="testimonials-wrapper dark">

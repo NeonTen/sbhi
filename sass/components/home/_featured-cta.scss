@@ -8,11 +8,17 @@
         flex-shrink: 0;
     }
     .right-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         margin-left: 48px;
     }
     .entry-content {
         max-width: 69%;
         margin-top: 16px;
+    }
+    .button {
+        margin-top: 24px;
     }
 }
 

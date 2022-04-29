@@ -10,16 +10,6 @@ Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: sbhi
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-SBHI is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -261,6 +251,10 @@ big {
 	align-items: center;
 }
 
+.justify-center {
+	justify-content: center;
+}
+
 .text-thin {
 	font-weight: 300;
 }
@@ -358,12 +352,15 @@ dd {
 	margin: 0 1.5em 1.5em;
 }
 
-.custom-list {
+.custom-list,
+.tutor-course-content-content ul {
 	display: grid;
 	gap: 12px;
+	margin: 30px 0 30px 30px;
 }
 
-.custom-list li {
+.custom-list li,
+.tutor-course-content-content ul li {
 	background: url("images/icons/square-checked.svg") left center no-repeat;
 	font-size: 18px;
 	padding-left: 29px;
@@ -599,17 +596,17 @@ input[type="submit"] {
 	justify-content: center;
 	align-items: center;
 	max-width: 250px;
-	height: 50px;
+	height: 46px;
 	background: #00365F;
 	color: #fff;
 	border: 1px solid transparent;
 	border-radius: 100px;
 	font-family: "Titillium Web", sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 700;
 	line-height: 1;
 	letter-spacing: 0.04em;
-	padding: 0 30px;
+	padding: 0 24px;
 	text-transform: uppercase;
 	white-space: nowrap;
 	transition: all 0.2s linear;
@@ -731,6 +728,7 @@ input[type="submit"]:active path {
 
 .button.border-button,
 button.border-button,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger,
 .single-courses .border-button.write-course-review-link-btn,
 .single-courses .border-button.tutor-btn,
 .single-courses .border-button.tutor-button,
@@ -739,6 +737,7 @@ button.border-button,
 .single-lesson .border-button.tutor-btn,
 .single-lesson .border-button.tutor-button,
 .single-lesson .border-button.course-complete-button,
+.login-page .right-wrap .um-form input[type="submit"],
 input[type="button"].border-button,
 input[type="reset"].border-button,
 input[type="submit"].border-button {
@@ -749,6 +748,7 @@ input[type="submit"].border-button {
 
 .button.border-button path,
 button.border-button path,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger path,
 .single-courses .border-button.write-course-review-link-btn path,
 .single-courses .border-button.tutor-btn path,
 .single-courses .border-button.tutor-button path,
@@ -757,6 +757,7 @@ button.border-button path,
 .single-lesson .border-button.tutor-btn path,
 .single-lesson .border-button.tutor-button path,
 .single-lesson .border-button.course-complete-button path,
+.login-page .right-wrap .um-form input[type="submit"] path,
 input[type="button"].border-button path,
 input[type="reset"].border-button path,
 input[type="submit"].border-button path {
@@ -765,6 +766,7 @@ input[type="submit"].border-button path {
 
 .button.border-button:hover, .button.border-button:active, .button.border-button:focus,
 button.border-button:hover,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:hover,
 .single-courses .border-button.write-course-review-link-btn:hover,
 .single-courses .border-button.tutor-btn:hover,
 .single-courses .border-button.tutor-button:hover,
@@ -773,7 +775,9 @@ button.border-button:hover,
 .single-lesson .border-button.tutor-btn:hover,
 .single-lesson .border-button.tutor-button:hover,
 .single-lesson .border-button.course-complete-button:hover,
+.login-page .right-wrap .um-form input:hover[type="submit"],
 button.border-button:active,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:active,
 .single-courses .border-button.write-course-review-link-btn:active,
 .single-courses .border-button.tutor-btn:active,
 .single-courses .border-button.tutor-button:active,
@@ -782,7 +786,9 @@ button.border-button:active,
 .single-lesson .border-button.tutor-btn:active,
 .single-lesson .border-button.tutor-button:active,
 .single-lesson .border-button.course-complete-button:active,
+.login-page .right-wrap .um-form input:active[type="submit"],
 button.border-button:focus,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:focus,
 .single-courses .border-button.write-course-review-link-btn:focus,
 .single-courses .border-button.tutor-btn:focus,
 .single-courses .border-button.tutor-button:focus,
@@ -791,6 +797,7 @@ button.border-button:focus,
 .single-lesson .border-button.tutor-btn:focus,
 .single-lesson .border-button.tutor-button:focus,
 .single-lesson .border-button.course-complete-button:focus,
+.login-page .right-wrap .um-form input:focus[type="submit"],
 input[type="button"].border-button:hover,
 input[type="button"].border-button:active,
 input[type="button"].border-button:focus,
@@ -806,6 +813,7 @@ input[type="submit"].border-button:focus {
 
 .button.border-button:hover.dark-bg, .button.border-button:active.dark-bg, .button.border-button:focus.dark-bg,
 button.border-button:hover.dark-bg,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:hover.dark-bg,
 .single-courses .border-button.write-course-review-link-btn:hover.dark-bg,
 .single-courses .border-button.tutor-btn:hover.dark-bg,
 .single-courses .border-button.tutor-button:hover.dark-bg,
@@ -814,7 +822,9 @@ button.border-button:hover.dark-bg,
 .single-lesson .border-button.tutor-btn:hover.dark-bg,
 .single-lesson .border-button.tutor-button:hover.dark-bg,
 .single-lesson .border-button.course-complete-button:hover.dark-bg,
+.login-page .right-wrap .um-form input:hover.dark-bg[type="submit"],
 button.border-button:active.dark-bg,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:active.dark-bg,
 .single-courses .border-button.write-course-review-link-btn:active.dark-bg,
 .single-courses .border-button.tutor-btn:active.dark-bg,
 .single-courses .border-button.tutor-button:active.dark-bg,
@@ -823,7 +833,9 @@ button.border-button:active.dark-bg,
 .single-lesson .border-button.tutor-btn:active.dark-bg,
 .single-lesson .border-button.tutor-button:active.dark-bg,
 .single-lesson .border-button.course-complete-button:active.dark-bg,
+.login-page .right-wrap .um-form input:active.dark-bg[type="submit"],
 button.border-button:focus.dark-bg,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:focus.dark-bg,
 .single-courses .border-button.write-course-review-link-btn:focus.dark-bg,
 .single-courses .border-button.tutor-btn:focus.dark-bg,
 .single-courses .border-button.tutor-button:focus.dark-bg,
@@ -832,6 +844,7 @@ button.border-button:focus.dark-bg,
 .single-lesson .border-button.tutor-btn:focus.dark-bg,
 .single-lesson .border-button.tutor-button:focus.dark-bg,
 .single-lesson .border-button.course-complete-button:focus.dark-bg,
+.login-page .right-wrap .um-form input:focus.dark-bg[type="submit"],
 input[type="button"].border-button:hover.dark-bg,
 input[type="button"].border-button:active.dark-bg,
 input[type="button"].border-button:focus.dark-bg,
@@ -846,6 +859,7 @@ input[type="submit"].border-button:focus.dark-bg {
 
 .button.border-button:hover path, .button.border-button:active path, .button.border-button:focus path,
 button.border-button:hover path,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:hover path,
 .single-courses .border-button.write-course-review-link-btn:hover path,
 .single-courses .border-button.tutor-btn:hover path,
 .single-courses .border-button.tutor-button:hover path,
@@ -854,7 +868,9 @@ button.border-button:hover path,
 .single-lesson .border-button.tutor-btn:hover path,
 .single-lesson .border-button.tutor-button:hover path,
 .single-lesson .border-button.course-complete-button:hover path,
+.login-page .right-wrap .um-form input:hover[type="submit"] path,
 button.border-button:active path,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:active path,
 .single-courses .border-button.write-course-review-link-btn:active path,
 .single-courses .border-button.tutor-btn:active path,
 .single-courses .border-button.tutor-button:active path,
@@ -863,7 +879,9 @@ button.border-button:active path,
 .single-lesson .border-button.tutor-btn:active path,
 .single-lesson .border-button.tutor-button:active path,
 .single-lesson .border-button.course-complete-button:active path,
+.login-page .right-wrap .um-form input:active[type="submit"] path,
 button.border-button:focus path,
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger:focus path,
 .single-courses .border-button.write-course-review-link-btn:focus path,
 .single-courses .border-button.tutor-btn:focus path,
 .single-courses .border-button.tutor-button:focus path,
@@ -872,6 +890,7 @@ button.border-button:focus path,
 .single-lesson .border-button.tutor-btn:focus path,
 .single-lesson .border-button.tutor-button:focus path,
 .single-lesson .border-button.course-complete-button:focus path,
+.login-page .right-wrap .um-form input:focus[type="submit"] path,
 input[type="button"].border-button:hover path,
 input[type="button"].border-button:active path,
 input[type="button"].border-button:focus path,
@@ -900,6 +919,88 @@ input[type="submit"].shadow {
 	box-shadow: 0px 10px 10px -5px rgba(0, 74, 209, 0.25);
 }
 
+.button.orange-hover:hover, .button.orange-hover:active, .button.orange-hover:focus,
+button.orange-hover:hover,
+.single-courses .orange-hover.write-course-review-link-btn:hover,
+.single-courses .orange-hover.tutor-btn:hover,
+.single-courses .orange-hover.tutor-button:hover,
+.single-courses .orange-hover.course-complete-button:hover,
+.single-lesson .orange-hover.write-course-review-link-btn:hover,
+.single-lesson .orange-hover.tutor-btn:hover,
+.single-lesson .orange-hover.tutor-button:hover,
+.single-lesson .orange-hover.course-complete-button:hover,
+button.orange-hover:active,
+.single-courses .orange-hover.write-course-review-link-btn:active,
+.single-courses .orange-hover.tutor-btn:active,
+.single-courses .orange-hover.tutor-button:active,
+.single-courses .orange-hover.course-complete-button:active,
+.single-lesson .orange-hover.write-course-review-link-btn:active,
+.single-lesson .orange-hover.tutor-btn:active,
+.single-lesson .orange-hover.tutor-button:active,
+.single-lesson .orange-hover.course-complete-button:active,
+button.orange-hover:focus,
+.single-courses .orange-hover.write-course-review-link-btn:focus,
+.single-courses .orange-hover.tutor-btn:focus,
+.single-courses .orange-hover.tutor-button:focus,
+.single-courses .orange-hover.course-complete-button:focus,
+.single-lesson .orange-hover.write-course-review-link-btn:focus,
+.single-lesson .orange-hover.tutor-btn:focus,
+.single-lesson .orange-hover.tutor-button:focus,
+.single-lesson .orange-hover.course-complete-button:focus,
+input[type="button"].orange-hover:hover,
+input[type="button"].orange-hover:active,
+input[type="button"].orange-hover:focus,
+input[type="reset"].orange-hover:hover,
+input[type="reset"].orange-hover:active,
+input[type="reset"].orange-hover:focus,
+input[type="submit"].orange-hover:hover,
+input[type="submit"].orange-hover:active,
+input[type="submit"].orange-hover:focus {
+	background: #F08300;
+	border-color: #F08300;
+	color: #fff;
+}
+
+.button.orange-hover:hover path, .button.orange-hover:active path, .button.orange-hover:focus path,
+button.orange-hover:hover path,
+.single-courses .orange-hover.write-course-review-link-btn:hover path,
+.single-courses .orange-hover.tutor-btn:hover path,
+.single-courses .orange-hover.tutor-button:hover path,
+.single-courses .orange-hover.course-complete-button:hover path,
+.single-lesson .orange-hover.write-course-review-link-btn:hover path,
+.single-lesson .orange-hover.tutor-btn:hover path,
+.single-lesson .orange-hover.tutor-button:hover path,
+.single-lesson .orange-hover.course-complete-button:hover path,
+button.orange-hover:active path,
+.single-courses .orange-hover.write-course-review-link-btn:active path,
+.single-courses .orange-hover.tutor-btn:active path,
+.single-courses .orange-hover.tutor-button:active path,
+.single-courses .orange-hover.course-complete-button:active path,
+.single-lesson .orange-hover.write-course-review-link-btn:active path,
+.single-lesson .orange-hover.tutor-btn:active path,
+.single-lesson .orange-hover.tutor-button:active path,
+.single-lesson .orange-hover.course-complete-button:active path,
+button.orange-hover:focus path,
+.single-courses .orange-hover.write-course-review-link-btn:focus path,
+.single-courses .orange-hover.tutor-btn:focus path,
+.single-courses .orange-hover.tutor-button:focus path,
+.single-courses .orange-hover.course-complete-button:focus path,
+.single-lesson .orange-hover.write-course-review-link-btn:focus path,
+.single-lesson .orange-hover.tutor-btn:focus path,
+.single-lesson .orange-hover.tutor-button:focus path,
+.single-lesson .orange-hover.course-complete-button:focus path,
+input[type="button"].orange-hover:hover path,
+input[type="button"].orange-hover:active path,
+input[type="button"].orange-hover:focus path,
+input[type="reset"].orange-hover:hover path,
+input[type="reset"].orange-hover:active path,
+input[type="reset"].orange-hover:focus path,
+input[type="submit"].orange-hover:hover path,
+input[type="submit"].orange-hover:active path,
+input[type="submit"].orange-hover:focus path {
+	fill: #fff;
+}
+
 .button svg,
 button svg,
 .single-courses .write-course-review-link-btn svg,
@@ -913,6 +1014,8 @@ button svg,
 input[type="button"] svg,
 input[type="reset"] svg,
 input[type="submit"] svg {
+	flex-shrink: 0;
+	width: 16px;
 	margin-left: 10px;
 }
 
@@ -948,6 +1051,19 @@ input[type="submit"].button-full {
 @media screen and (max-width: 550px) {
 	.inline-buttons .button {
 		padding: 0 20px;
+	}
+	
+	button,
+	.single-courses .write-course-review-link-btn,
+	.single-courses .tutor-btn,
+	.single-courses .tutor-button,
+	.single-courses .course-complete-button,
+	.single-lesson .write-course-review-link-btn,
+	.single-lesson .tutor-btn,
+	.single-lesson .tutor-button,
+	.single-lesson .course-complete-button,
+	.button {
+		max-width: fit-content !important;
 	}
 }
 
@@ -1105,10 +1221,14 @@ textarea {
 	}
 }
 
-.no-sidebar .site {
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-areas: "header" "main" "footer";
+@media screen and (max-width: 600px) {
+	.main-wrapper {
+		margin-top: 30px;
+	}
+}
+
+.no-sidebar {
+	width: 100%;
 }
 
 .header-after .container {
@@ -1134,12 +1254,19 @@ textarea {
 	margin: 0 6px;
 }
 
+.header-after .page-title {
+	margin-bottom: 0;
+}
+
 @media screen and (min-width: 850px) {
 	.header-after {
-		padding: 10px 80px;
+		padding: 12px 0 0 0;
 	}
 	.header-after .container {
-		grid-template-columns: minmax(300px, 500px) 1fr;
+		grid-template-columns: 1fr;
+	}
+	.header-after .breadcrumbs {
+		margin-bottom: 0;
 	}
 }
 
@@ -1166,7 +1293,14 @@ textarea {
 	.tutor-course-filter-wrapper {
 		flex-direction: column;
 	}
-	.tutor-course-filter-container {
+	.tutor-course-filter-container form > div {
+		display: none;
+	}
+	.tutor-course-filter-container form .tutor-course-search-field {
+		display: block;
+		margin-bottom: 32px;
+	}
+	.tutor-course-archive-results-wrap {
 		display: none;
 	}
 }
@@ -1180,7 +1314,6 @@ textarea {
 
 .login-page .login-title {
 	font-size: 60px;
-	color: #070707;
 }
 
 .login-page .wrapper {
@@ -1242,13 +1375,22 @@ textarea {
 	}
 }
 
+@media screen and (max-width: 600px) {
+	.login-page .left-wrap .login-title {
+		margin-bottom: 30px;
+	}
+	.login-page .login-title {
+		font-size: 24px;
+	}
+}
+
 .contact-page .wrapper {
 	display: flex;
 	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	border: 1px solid #98BDFF;
-	padding: 48px;
+	padding: 24px;
 	border-radius: 12px;
 }
 
@@ -1327,10 +1469,18 @@ textarea {
 @media screen and (max-width: 720px) {
 	.contact-page .wrapper {
 		flex-direction: column;
-		padding: 24px;
+		padding: 0;
+		border: none;
 	}
 	.contact-page .left-wrap {
 		padding: 0;
+		margin-bottom: 46px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.wpforms-recaptcha-container .g-recaptcha > div {
+		width: 100% !important;
 	}
 }
 
@@ -1351,8 +1501,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 50px;
-	height: 50px;
+	width: 46px;
+	height: 46px;
 	border: 1px solid #fff;
 	border-radius: 100px;
 }
@@ -1392,14 +1542,31 @@ body {
 }
 
 .top-bar .left-wrap a {
-	margin-right: 48px;
+	display: flex;
+	margin-right: 24px;
+}
+
+.top-bar .left-wrap a svg {
+	width: 20px;
+	transform: translateY(-1px);
 }
 
 .top-bar .left-wrap > * {
 	color: #fff;
-	font-family: "Titillium Web", sans-serif;
-	font-size: 24px;
-	font-weight: 700;
+	font-size: 16px;
+}
+
+.top-bar .left-wrap > span {
+	display: flex;
+}
+
+.top-bar .left-wrap svg {
+	width: 18px;
+	margin-right: 8px;
+}
+
+.top-bar .left-wrap path {
+	fill: #fff;
 }
 
 .top-bar .icon {
@@ -1429,6 +1596,10 @@ body {
 	z-index: 1;
 }
 
+.main-header .login-wrap.logged-in {
+	position: relative;
+}
+
 .main-header .login-wrap.logged-in a {
 	display: flex;
 	color: #00365F;
@@ -1442,12 +1613,28 @@ body {
 	letter-spacing: 0.02em;
 }
 
+.main-header .login-wrap.logged-in:hover .dropdown {
+	display: block;
+}
+
 .main-header .login-wrap.logged-out {
 	display: flex;
 }
 
 .main-header .login-wrap .button + .button {
 	margin-left: 24px;
+}
+
+.main-header .login-wrap .dropdown {
+	width: 140px;
+	background: #fff;
+	padding: 8px;
+	border-radius: 5px;
+	border: 1px solid #C4C4C4;
+	position: absolute;
+	right: 0;
+	top: 46px;
+	display: none;
 }
 
 @media screen and (max-width: 860px) {
@@ -1478,6 +1665,12 @@ body {
 	.top-bar .right-wrap {
 		width: 100%;
 		justify-content: space-between;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.site-branding {
+		margin-top: 10px;
 	}
 }
 
@@ -1542,8 +1735,7 @@ body {
 	position: relative;
 }
 
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
+.main-navigation li:hover > a {
 	border-color: #F08300;
 }
 
@@ -1595,8 +1787,10 @@ body {
 		grid-template-columns: 1fr 1fr;
 	}
 	.main-navigation {
-		order: 1;
-		grid-column: 1/-1;
+		width: auto;
+		position: absolute;
+		top: 0;
+		right: 30px;
 	}
 	.main-navigation button.menu-toggle, .main-navigation .single-courses .menu-toggle.write-course-review-link-btn, .single-courses .main-navigation .menu-toggle.write-course-review-link-btn,
 	.main-navigation .single-courses .menu-toggle.tutor-btn, .single-courses .main-navigation .menu-toggle.tutor-btn,
@@ -1613,8 +1807,6 @@ body {
 		padding: 0 20px;
 		font-size: 16px;
 		color: #00365F;
-		border-radius: 0;
-		border: 1px solid #98BDFF;
 		background: #fff;
 		margin-top: 10px;
 	}
@@ -1625,6 +1817,9 @@ body {
 		border: 1px solid #98BDFF;
 		margin-top: -1px;
 		padding: 10px;
+		background: #fff;
+		position: relative;
+		z-index: 10;
 	}
 	.main-navigation li {
 		margin: 3px 0;
@@ -1638,6 +1833,10 @@ body {
 	}
 	.main-navigation a {
 		padding: 0;
+	}
+	.top-bar .right-wrap .donate-button,
+	.main-header .right-wrap .register-button {
+		display: none;
 	}
 }
 
@@ -1654,7 +1853,7 @@ body {
 .page-content,
 .entry-content,
 .entry-summary {
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 140%;
 	letter-spacing: 0.02em;
 }
@@ -1675,7 +1874,7 @@ body {
 }
 
 .big-title {
-	font-size: 96px;
+	font-size: 78px;
 }
 
 .page-links {
@@ -1695,7 +1894,7 @@ body {
 		margin-bottom: 56px;
 	}
 	.entry-title {
-		font-size: 48px;
+		font-size: 36px;
 	}
 }
 
@@ -1703,24 +1902,45 @@ body {
 --------------------------------------------- */
 .footer-widgets {
 	padding: 50px 0;
-	border-top: 1px solid #00365F;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	background: #f5f5f5;
 }
 
 .footer-widgets .container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	grid-template-columns: 1fr;
 	gap: 48px;
 }
 
-.f-widget .f-site-name,
 .f-widget .widget-title {
 	font-size: 24px;
 	color: #00365F;
 }
 
+.f-widget .f-site-name h2 {
+	font-size: 24px;
+	margin: 0;
+	color: #00365F;
+}
+
 .f-widget .widget-title {
 	margin-bottom: 24px;
+}
+
+.f-widget .top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.f-widget .f-logo {
+	flex-shrink: 0;
+}
+
+.f-widget .f-logo > a {
+	display: flex;
+	max-width: 80px;
+	margin-right: 16px;
 }
 
 .f-widget .f-links {
@@ -1742,9 +1962,18 @@ body {
 	color: #F08300;
 }
 
+.f-widget .about-text p {
+	font-size: 16px;
+}
+
+.f-widget .about-text a {
+	color: #00365F;
+	font-style: italic;
+}
+
 .f-widget .button {
 	margin-top: 48px;
-	max-width: 165px;
+	max-width: 130px;
 }
 
 .f-widget .social-icons {
@@ -1753,11 +1982,15 @@ body {
 }
 
 .f-widget .social-icons li {
-	margin-right: 4px;
+	margin-right: 8px;
 }
 
 .f-widget .social-icons li:last-of-type {
 	margin-right: 0;
+}
+
+.f-widget .social-icons li svg {
+	width: 36px;
 }
 
 .f-widget .social-icons li path {
@@ -1768,9 +2001,30 @@ body {
 	fill: #F08300;
 }
 
+@media screen and (min-width: 550px) {
+	.footer-widgets .container {
+		grid-template-columns: 1fr 1fr;
+	}
+	.f-widget .button {
+		max-width: fit-content;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.footer-widgets .container {
+		grid-template-columns: minmax(250px, 1fr) repeat(auto-fit, minmax(180px, 1fr));
+	}
+}
+
+@media screen and (min-width: 1170px) {
+	.footer-widgets .container {
+		grid-template-columns: minmax(450px, 360px) minmax(162px, 1fr) minmax(240px, 1fr) minmax(162px, 1fr);
+	}
+}
+
 @media screen and (min-width: 1440px) {
 	.footer-widgets .container {
-		grid-template-columns: minmax(170px, 176px) minmax(250px, 363px) minmax(162px, 1fr) minmax(240px, 1fr) minmax(162px, 1fr);
+		grid-template-columns: minmax(450px, 360px) minmax(162px, 1fr) minmax(240px, 1fr) minmax(162px, 1fr);
 	}
 }
 
@@ -1863,12 +2117,19 @@ body {
 }
 
 .featured-cta .right-wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	margin-left: 48px;
 }
 
 .featured-cta .entry-content {
 	max-width: 69%;
 	margin-top: 16px;
+}
+
+.featured-cta .button {
+	margin-top: 24px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -1909,6 +2170,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 	padding: 32px;
 	border: 1px solid #C4C4C4;
 	border-radius: 12px;
@@ -1927,12 +2189,6 @@ body {
 	display: initial;
 }
 
-.audience-wrapper .audience-list:hover .button {
-	color: #00365F;
-	border-color: #00365F;
-	background: #fff;
-}
-
 .audience-wrapper .entry-title {
 	text-align: center;
 	margin-bottom: 16px;
@@ -1941,6 +2197,7 @@ body {
 .audience-wrapper .icon,
 .audience-wrapper .entry-content {
 	margin-bottom: 32px;
+	text-align: center;
 }
 
 .steps-wrapper {
@@ -1950,13 +2207,14 @@ body {
 
 .steps-wrapper .steps-lists {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 128px;
 	justify-content: center;
 }
 
 .steps-wrapper .entry-title {
 	margin-bottom: 16px;
+	text-align: center;
 }
 
 .steps-wrapper .entry-content {
@@ -1987,6 +2245,18 @@ body {
 	display: initial;
 }
 
+@media screen and (max-width: 1050px) {
+	.steps-wrapper .steps-lists {
+		gap: 30px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.steps-wrapper .steps-lists {
+		grid-template-columns: 1fr;
+	}
+}
+
 .courses-wrapper {
 	padding: 100px 0;
 }
@@ -2000,7 +2270,7 @@ body {
 
 .courses-wrapper .tutor-course-header > a {
 	display: flex;
-	height: 204px;
+	height: 234px;
 	overflow: hidden;
 }
 
@@ -2020,6 +2290,12 @@ body {
 	display: grid;
 	justify-content: center;
 	margin-top: 26px;
+}
+
+@media screen and (max-width: 650px) {
+	.courses-wrapper .courses-lists .tutor-courses {
+		gap: 20px 0;
+	}
 }
 
 .testimonials-wrapper {
@@ -2196,6 +2472,7 @@ body {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+	max-width: 60px;
 }
 
 /* Captions
@@ -2278,6 +2555,8 @@ body {
 }
 
 .tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks {
+	display: flex;
+	flex-direction: column;
 	border-right: none;
 }
 
@@ -2306,6 +2585,10 @@ body {
 
 .tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks li.active a:hover {
 	background: #00365F;
+}
+
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks li.tutor-dashboard-menu-index, .tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks li.tutor-dashboard-menu-my-profile, .tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks li.tutor-dashboard-menu-enrolled-courses, .tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks li.tutor-dashboard-menu-my-quiz-attempts {
+	order: -1;
 }
 
 .tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks a::before {
@@ -2389,6 +2672,11 @@ body {
 	color: #070707;
 	padding: 0px 40px 0 16px;
 	border-radius: 4px;
+}
+
+.tutor-login-form-wrap input[type="submit"] {
+	max-width: 100%;
+	border-radius: 50px;
 }
 
 .tutor-course-filter-container form {
@@ -2486,11 +2774,22 @@ div[class*="tutor-course-col"] {
 	background: #FBFDFF;
 	box-shadow: 0px 2px 15px -10px rgba(0, 0, 0, 0.1), 0px -2px 15px -5px rgba(0, 0, 0, 0.1);
 	border-radius: 12px;
+	justify-content: flex-start;
 }
 
-.tutor-course-loop-title h2 {
+.tutor-course-loop-title h2,
+.tutor-course-loop-title h3 {
 	font-size: 24px;
 	font-weight: 700;
+	margin-bottom: 24px;
+}
+
+.tutor-course-loop-title h3 a {
+	color: #00365F;
+}
+
+.tutor-loop-course-footer {
+	margin-top: auto;
 }
 
 .course-features {
@@ -2507,11 +2806,39 @@ div[class*="tutor-course-col"] {
 }
 
 .course-features .selector {
-	color: #4E4D4D;
+	font-weight: 600;
 }
 
 .course-features .value {
-	font-weight: 600;
+	color: #4E4D4D;
+	text-align: right;
+}
+
+.tutor-pagination-wrap {
+	display: flex;
+	justify-content: center;
+}
+
+.tutor-pagination-wrap .page-numbers {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 32px;
+	background: #00365F;
+	color: #fff;
+	margin: 0 4px;
+}
+
+.tutor-pagination-wrap .page-numbers.current, .tutor-pagination-wrap .page-numbers:hover {
+	background: #F08300;
+	color: #fff;
+}
+
+.tutor-pagination-wrap .page-numbers.next, .tutor-pagination-wrap .page-numbers.prev {
+	width: auto;
+	padding: 0 16px;
 }
 
 .single-courses .tutor-container {
@@ -2540,17 +2867,63 @@ div[class*="tutor-course-col"] {
 
 .single-courses .tutor-wrap nav.course-enrolled-nav li {
 	display: flex;
+	padding: 0;
 }
 
 .single-courses .tutor-wrap nav.course-enrolled-nav li a {
+	width: 100%;
+	display: block;
+	text-align: center;
 	margin: 0 !important;
-	padding: 0;
+	padding: 12px;
 	color: #00365F;
 }
 
 .single-courses .tutor-wrap nav.course-enrolled-nav li.active a {
 	border-bottom: none;
 	color: #fff;
+}
+
+.single-courses .tutor-wrap img {
+	width: 100%;
+}
+
+.single-courses .tutor-review-individual-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.single-courses .tutor-review-individual-item .review-left {
+	width: auto;
+	display: flex;
+	align-items: center;
+}
+
+.single-courses .tutor-review-individual-item .review-avatar {
+	width: auto;
+}
+
+.single-courses .tutor-review-individual-item .review-content {
+	padding-left: 0;
+	margin-top: 30px;
+}
+
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 172px;
+}
+
+.single-courses .tutor_question_cancel.tutor-button.tutor-danger + .tutor_ask_question_btn {
+	margin-top: 24px;
+}
+
+.single-courses form .tutor-form-group + .tutor-form-group + .tutor-form-group {
+	display: flex;
+}
+
+.tutor_add_answer_row {
+	margin-bottom: 30px;
 }
 
 .single-instructor-wrap {
@@ -2608,6 +2981,7 @@ div[class*="tutor-course-col"] {
 
 .tutor-text-mute {
 	color: #00365F;
+	text-transform: capitalize;
 }
 
 .tutor-price-preview-box {
@@ -2631,6 +3005,86 @@ div[class*="tutor-course-col"] {
 	border-radius: 100px !important;
 }
 
+.single-courses .tutor-button-primary:hover,
+.single-lesson .tutor-button-primary:hover {
+	background: transparent !important;
+}
+
+.single-courses .tutor-lead-info-btn-group .tutor-course-complete-form-wrap button, .single-courses .tutor-lead-info-btn-group .tutor-course-complete-form-wrap .write-course-review-link-btn,
+.single-courses .tutor-lead-info-btn-group .tutor-course-complete-form-wrap .tutor-btn,
+.single-courses .tutor-lead-info-btn-group .tutor-course-complete-form-wrap .tutor-button,
+.single-courses .tutor-lead-info-btn-group .tutor-course-complete-form-wrap .course-complete-button,
+.single-courses .tutor-lead-info-btn-group a.tutor-button,
+.single-lesson .tutor-lead-info-btn-group .tutor-course-complete-form-wrap button,
+.single-lesson .tutor-lead-info-btn-group .tutor-course-complete-form-wrap .write-course-review-link-btn,
+.single-lesson .tutor-lead-info-btn-group .tutor-course-complete-form-wrap .tutor-btn,
+.single-lesson .tutor-lead-info-btn-group .tutor-course-complete-form-wrap .tutor-button,
+.single-lesson .tutor-lead-info-btn-group .tutor-course-complete-form-wrap .course-complete-button,
+.single-lesson .tutor-lead-info-btn-group a.tutor-button {
+	display: flex;
+}
+
+.single-courses .tutor-lead-info-btn-group p,
+.single-lesson .tutor-lead-info-btn-group p {
+	margin-top: 24px;
+}
+
+.single-courses .tutor-lead-info-btn-group p::first-letter,
+.single-lesson .tutor-lead-info-btn-group p::first-letter {
+	text-transform: capitalize;
+}
+
+.single-courses .tutor_admin_answers_list_wrap .tutor_question_area,
+.single-lesson .tutor_admin_answers_list_wrap .tutor_question_area {
+	background: #e9f0fd;
+}
+
+.single-courses .question-top-meta .tutor-question-avater a span.tutor-text-avatar,
+.single-lesson .question-top-meta .tutor-question-avater a span.tutor-text-avatar {
+	background: #00365F !important;
+}
+
+.single-courses .tutor-course-tags a,
+.single-lesson .tutor-course-tags a {
+	background: #00365F;
+	color: #fff;
+}
+
+.single-courses .tutor-course-tags a:hover,
+.single-lesson .tutor-course-tags a:hover {
+	background: #F08300;
+}
+
+.single-courses .tutor-button.bordered-button:hover,
+.single-lesson .tutor-button.bordered-button:hover {
+	background: transparent;
+}
+
+.single-courses .plyr--full-ui.plyr--video .plyr__control--overlaid,
+.single-lesson .plyr--full-ui.plyr--video .plyr__control--overlaid {
+	width: 46px;
+}
+
+.single-courses .plyr__control--overlaid svg,
+.single-lesson .plyr__control--overlaid svg {
+	margin-left: 0;
+}
+
+.single-courses .tutor-course-benefits-content ul,
+.single-lesson .tutor-course-benefits-content ul {
+	font-size: 18px;
+}
+
+.single-courses .tutor_add_answer_row .tutor-form-group:last-child,
+.single-lesson .tutor_add_answer_row .tutor-form-group:last-child {
+	display: flex;
+}
+
+.single-courses .tutor-add-question-wrap h3,
+.single-lesson .tutor-add-question-wrap h3 {
+	margin-bottom: 12px;
+}
+
 .tutor-single-page-top-bar .tutor-single-lesson-segment button.course-complete-button,
 .tutor-single-page-top-bar .tutor-single-lesson-segment .single-courses .course-complete-button, .single-courses .tutor-single-page-top-bar .tutor-single-lesson-segment .course-complete-button,
 .tutor-single-page-top-bar .tutor-single-lesson-segment .single-lesson .course-complete-button, .single-lesson .tutor-single-page-top-bar .tutor-single-lesson-segment .course-complete-button {
@@ -2639,6 +3093,10 @@ div[class*="tutor-course-col"] {
 
 .tutor-lesson-sidebar-hide-bar {
 	background: #F08300;
+}
+
+.tutor-lesson-sidebar-hide-bar:focus {
+	color: #fff;
 }
 
 .tutor-single-page-top-bar a.tutor-topbar-home-btn {
@@ -2656,6 +3114,50 @@ div[class*="tutor-course-col"] {
 	.tutor-dashboard {
 		max-width: 1200px;
 		padding: 0;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.tutor-course-filter-wrapper > div:first-child {
+		padding-right: 0;
+	}
+	.tutor-course-filter-wrap {
+		display: block;
+	}
+	.tutor-course-filter-wrap .tutor-course-filter-form {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.single-courses .tutor-wrap nav.course-enrolled-nav {
+		padding: 16px;
+	}
+	.tutor-wrap nav.course-enrolled-nav ul {
+		flex-direction: column;
+	}
+	.tabs li,
+	.course-enrolled-nav ul li {
+		margin: 6px 0;
+		padding: 6px 20px;
+	}
+	.single-instructor-wrap .single-instructor-bottom {
+		display: flex;
+		flex-direction: column;
+	}
+	.single-instructor-wrap .single-instructor-bottom .courses,
+	.single-instructor-wrap .single-instructor-bottom .students {
+		margin-left: 0;
+	}
+	.single-courses .tutor-container,
+	.tutor-dashboard {
+		margin-top: 0;
+	}
+	.tutor-course-filter-wrapper {
+		margin-top: 0 !important;
+	}
+	.single-courses .tutor-review-individual-item .review-content {
+		margin-top: 0;
 	}
 }
 
@@ -2724,6 +3226,99 @@ div[class*="tutor-course-col"] {
 
 .contact-page textarea {
 	min-height: 80px;
+}
+
+label.wpforms-field-label {
+	position: absolute;
+	z-index: -1;
+}
+
+.um-form input,
+.um-form input[type="text"],
+.um-form input[type="password"] {
+	margin-bottom: 10px;
+}
+
+.um-form input[type="submit"] {
+	width: 100%;
+	max-width: 100%;
+	margin: 20px 0;
+	cursor: pointer;
+}
+
+.um-form .um-field-username_b {
+	margin-top: 24px;
+}
+
+.login-page .right-wrap .um-form .um-field-checkbox {
+	margin-top: 16px;
+}
+
+.login-page .right-wrap .um-form .um-field-checkbox input[type="checkbox"] {
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+	margin-right: 8px;
+	float: left;
+}
+
+.login-page .right-wrap .um-form .um-field-checkbox .um-field-error {
+	margin-top: 10px;
+}
+
+.login-page .right-wrap .um-form input[type="submit"]:hover {
+	border-color: #fff;
+}
+
+.login-page .right-wrap .um-form select {
+	margin-bottom: 16px;
+}
+
+.login-page .right-wrap .um-form .um-field-area {
+	position: relative;
+}
+
+.login-page .right-wrap .um-form .select2-container .select2-selection--single .select2-selection__rendered {
+	position: absolute;
+	top: 11px;
+	left: 10px;
+}
+
+.login-page .right-wrap .um-form .select2-container .select2-selection--single .select2-selection__rendered .select2-selection__clear {
+	display: none;
+}
+
+.login-page .right-wrap .um-form .select2-selection__placeholder {
+	font-size: 18px !important;
+	color: #070707;
+	opacity: 0.6;
+}
+
+.login-page .right-wrap .select2-container--default .select2-selection--single {
+	height: 48px;
+	margin-bottom: 24px;
+}
+
+.login-page .right-wrap .select2-container--default .select2-results__option--highlighted[aria-selected] {
+	background: none;
+}
+
+.login-page .right-wrap .select2-results__option[aria-selected] {
+	color: #00365F;
+}
+
+.login-page .right-wrap .select2-container--default .select2-selection--single .select2-selection__arrow b {
+	margin-left: -10px;
+	margin-top: 7px;
+}
+
+.login-page .right-wrap .select2-container--open .select2-dropdown {
+	top: -25px;
+}
+
+.um-field-label {
+	position: absolute;
+	z-index: -1;
 }
 
 /*--------------------------------------------------------------
